@@ -17,19 +17,23 @@ This project is a game developed as part of the **Computer Graphics** undergradu
 * **Programming Language:**
 * **Graphics API:** 
 * **Modeling/Assets:** 
-
+<br>
 
 ## 📐 Computer Graphics Concepts
 The implementation leverages fundamental concepts from the course curriculum, specifically:
 
 * **Coordinate Systems & Transformations:** Handling local, world, view, and projection spaces using matrix multiplication (Translation, Rotation, Scaling).
 * **[TBD]**
+  
+<br>
 
 
 ## 📚 Theoretical References
 The development of this project is based on the following references:
 * **Foley, J. D., et al.** *Computer Graphics: Principles and Practice*.
 * **Shirley, P., et al.** *Fundamentals of Computer Graphics*.
+
+<br>
 
 
 ## 📋 Project Roadmap (TO-DO)
@@ -39,11 +43,15 @@ The development of this project is based on the following references:
 - [ ] Finalize core gameplay mechanics.
 - [ ] Update the technical dcumentation & performance analysis.
 
+<br>
 
 ## 👥 Contributors
 <a href="https://github.com/d-olivr/computer-graphic-game/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=d-olivr/computer-graphic-game" />
 </a>
+<br>
+
+<br>
 
 
 ## 🚀 Getting Started
