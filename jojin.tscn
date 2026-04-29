@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://xfmdc513em23"]
+
+[ext_resource type="Environment" uid="uid://ew0tqmqubotu" path="res://new_environmentsky.tres" id="1_djmir"]
+[ext_resource type="Script" uid="uid://48q2tgtc2muw" path="res://Scripts/view.gd" id="1_t60pq"]
+[ext_resource type="Script" uid="uid://bgxdmehye75yw" path="res://player.gd" id="2_2ihb7"]
+[ext_resource type="PackedScene" uid="uid://c7qlbx3r1pagk" path="res://Assets/barrel.glb" id="3_3khbi"]
+[ext_resource type="PackedScene" uid="uid://512mfoodb46c" path="res://Actors/patrick/uploads_files_6528875_Patrick_gltf.gltf" id="3_uc5yj"]
+[ext_resource type="PackedScene" uid="uid://dvuadafk0bdse" path="res://barrel_2.tscn" id="4_uc5yj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_axvob"]
+size = Vector3(2, 0.5, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djmir"]
+transparency = 1
+albedo_color = Color(0.79607844, 0, 0.12941177, 0.99215686)
+metallic = 0.73
+metallic_specular = 0.46
+
+[sub_resource type="BoxMesh" id="BoxMesh_djmir"]
+material = SubResource("StandardMaterial3D_djmir")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ihb7"]
+albedo_color = Color(0.5294118, 0, 0.1254902, 1)
+metallic = 1.0
+roughness = 0.0
+emission = Color(0.7906895, 0.17618713, 0.22974089, 1)
+emission_energy_multiplier = 1.69
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a1yox"]
+material = SubResource("StandardMaterial3D_2ihb7")
+size = Vector2(20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3khbi"]
+size = Vector3(20, 0, 20)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uc5yj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_t60pq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oy7ss"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_djmir"]
+bounce = 0.45
+
+[sub_resource type="SphereMesh" id="SphereMesh_ccp8j"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_di573"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3khbi"]
+
+[node name="World" type="Node3D" unique_id=1779464691]
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1830026366 node_paths=PackedStringArray("target")]
+transform = Transform3D(0.9967212, -0.08091218, 0, 0.08091218, 0.9967212, 0, 0, 0, 1, 0, 2.3841858e-07, 0)
+script = ExtResource("1_t60pq")
+target = NodePath("../Player")
+
+[node name="Camera" type="Camera3D" parent="CameraPivot" unique_id=13063067]
+fov = 132.98405
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=53666021]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.028224945, 0.11871576)
+mesh = SubResource("BoxMesh_axvob")
+
+[node name="Box" type="MeshInstance3D" parent="." unique_id=224471510]
+transform = Transform3D(0.91696894, 0.2304993, 0.32563502, -0.37864724, 0.75992256, 0.5283405, -0.12567522, -0.6077727, 0.78410345, 0, 1.0733136, 0.12222648)
+mesh = SubResource("BoxMesh_djmir")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=888962017]
+environment = ExtResource("1_djmir")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1675930548]
+transform = Transform3D(-0.87119377, 0.15985283, 0.46418658, 0.29076105, -0.5938406, 0.75020844, 0.39557534, 0.78854394, 0.47087088, 3.9049697, 2.2536411, 24.453882)
+light_color = Color(0.8987935, 0.63949424, 0.36891124, 1)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=7811826]
+
+[node name="floor" type="MeshInstance3D" parent="StaticBody3D" unique_id=471856056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006747246, 0.027878761, -0.028751612)
+mesh = SubResource("PlaneMesh_a1yox")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=745217029]
+shape = SubResource("BoxShape3D_3khbi")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1164137228]
+mass = 0.313
+physics_material_override = SubResource("PhysicsMaterial_uc5yj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="RigidBody3D" unique_id=92638244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5184977, 1.5088749, 0)
+mesh = SubResource("CapsuleMesh_t60pq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=503201619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.518, 1.509, 0)
+shape = SubResource("CapsuleShape3D_oy7ss")
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="." unique_id=300682296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7437692, 4.1396737, 0)
+physics_material_override = SubResource("PhysicsMaterial_djmir")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2" unique_id=1099116896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4236927, 0, 0)
+mesh = SubResource("SphereMesh_ccp8j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2" unique_id=1057724519]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.424, 0, 0)
+shape = SubResource("SphereShape3D_di573")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1345092759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062427826, 3.124, -0.7308011)
+script = ExtResource("2_2ihb7")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=1549073263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05215621, -2.2468538, 1.0057173)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=146494980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.052, -2.247, 1.006)
+shape = SubResource("CapsuleShape3D_3khbi")
+
+[node name="uploads_files_6528875_Patrick_gltf" parent="Player" unique_id=166600452 instance=ExtResource("3_uc5yj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.052, -3.0503638, 1.006)
+
+[node name="barrel2" parent="." unique_id=1783988237 instance=ExtResource("3_3khbi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9535971, 0, -1.4378785)
+
+[node name="barrel3" parent="." unique_id=383951151 instance=ExtResource("4_uc5yj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)

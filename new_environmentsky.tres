@@ -1,0 +1,9 @@
+[gd_resource type="Environment" format=3 uid="uid://ew0tqmqubotu"]
+
+[ext_resource type="Sky" uid="uid://b0ua1j1pbevum" path="res://MorningSkyHDRI011B_2K/MorningSkyHDRI011B_2K.tres" id="1_n0n8o"]
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 0.34
+sky = ExtResource("1_n0n8o")
+ssr_enabled = true
