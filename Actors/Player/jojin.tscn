@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://xfmdc513em23"]
 
-[ext_resource type="Environment" uid="uid://ew0tqmqubotu" path="res://Scenes/new_environmentsky.tres" id="1_djmir"]
-[ext_resource type="Script" uid="uid://48q2tgtc2muw" path="res://Scripts/view.gd" id="1_t60pq"]
-[ext_resource type="Script" uid="uid://bgxdmehye75yw" path="res://player.gd" id="2_2ihb7"]
-[ext_resource type="PackedScene" uid="uid://c7qlbx3r1pagk" path="res://Assets/Outros/barrel.glb" id="3_3khbi"]
-[ext_resource type="PackedScene" uid="uid://512mfoodb46c" path="res://Actors/patrick/uploads_files_6528875_Patrick_gltf.gltf" id="3_uc5yj"]
-[ext_resource type="PackedScene" uid="uid://dvuadafk0bdse" path="res://Scenes/barrel_2.tscn" id="4_uc5yj"]
+[ext_resource type="Script" uid="uid://48q2tgtc2muw" path="res://Scripts/view.gd" id="1_er3hb"]
+[ext_resource type="Environment" uid="uid://ew0tqmqubotu" path="res://Scenes/new_environmentsky.tres" id="2_n75ht"]
+[ext_resource type="Script" uid="uid://bgxdmehye75yw" path="res://Actors/Player/player.gd" id="3_2fkrj"]
+[ext_resource type="PackedScene" uid="uid://512mfoodb46c" path="res://Actors/patrick/uploads_files_6528875_Patrick_gltf.gltf" id="4_2qw1v"]
+[ext_resource type="PackedScene" uid="uid://c7qlbx3r1pagk" path="res://Assets/Outros/barrel.glb" id="5_txnwe"]
+[ext_resource type="PackedScene" uid="uid://dvuadafk0bdse" path="res://Actors/Objects/barrel_2.tscn" id="6_kgp2t"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_axvob"]
 size = Vector3(2, 0.5, 2)
@@ -52,7 +52,7 @@ bounce = 0.45
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1830026366 node_paths=PackedStringArray("target")]
 transform = Transform3D(0.9967212, -0.08091218, 0, 0.08091218, 0.9967212, 0, 0, 0, 1, 0, 2.3841858e-07, 0)
-script = ExtResource("1_t60pq")
+script = ExtResource("1_er3hb")
 target = NodePath("../Player")
 
 [node name="Camera" type="Camera3D" parent="CameraPivot" unique_id=13063067]
@@ -67,7 +67,7 @@ transform = Transform3D(0.91696894, 0.2304993, 0.32563502, -0.37864724, 0.759922
 mesh = SubResource("BoxMesh_djmir")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=888962017]
-environment = ExtResource("1_djmir")
+environment = ExtResource("2_n75ht")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1675930548]
 transform = Transform3D(-0.87119377, 0.15985283, 0.46418658, 0.29076105, -0.5938406, 0.75020844, 0.39557534, 0.78854394, 0.47087088, 3.9049697, 2.2536411, 24.453882)
@@ -110,7 +110,7 @@ shape = SubResource("SphereShape3D_di573")
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1345092759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062427826, 3.124, -0.7308011)
-script = ExtResource("2_2ihb7")
+script = ExtResource("3_2fkrj")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=1549073263]
@@ -120,11 +120,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05215621, -2.2468538, 1.00
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.052, -2.247, 1.006)
 shape = SubResource("CapsuleShape3D_3khbi")
 
-[node name="uploads_files_6528875_Patrick_gltf" parent="Player" unique_id=166600452 instance=ExtResource("3_uc5yj")]
+[node name="uploads_files_6528875_Patrick_gltf" parent="Player" unique_id=2028580792 instance=ExtResource("4_2qw1v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.052, -3.0503638, 1.006)
 
-[node name="barrel2" parent="." unique_id=670583020 instance=ExtResource("3_3khbi")]
+[node name="barrel2" parent="." unique_id=670583020 instance=ExtResource("5_txnwe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9535971, 0, -1.4378785)
 
-[node name="barrel3" parent="." unique_id=1783988237 instance=ExtResource("4_uc5yj")]
+[node name="barrel3" parent="." unique_id=1783988237 instance=ExtResource("6_kgp2t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
