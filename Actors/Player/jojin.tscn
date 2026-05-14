@@ -112,7 +112,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_2fkrj")
 shape = SubResource("BoxShape3D_3khbi")
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1345092759]
-transform = Transform3D(0.0072430493, 0, -0.9999738, 0, 1, 0, 0.9999738, 0, 0.0072430493, 1, 3.124, -17.965168)
+transform = Transform3D(0.0072430493, 0, -0.9999738, 0, 1, 0, 0.9999738, 0, 0.0072430493, 1, 3.2506118, -18.436987)
 collision_mask = 3
 script = ExtResource("3_2fkrj")
 metadata/_edit_group_ = true
