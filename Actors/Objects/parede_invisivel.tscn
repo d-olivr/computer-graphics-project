@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://rcbcqtpw8nn1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wuhf6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w1ord"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_22vi2"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[node name="ParedeInvisivelEsq" type="StaticBody3D" unique_id=617566977]
+transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 2
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=653600938]
+mesh = SubResource("BoxMesh_wuhf6")
+surface_material_override/0 = SubResource("StandardMaterial3D_w1ord")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=960289538]
+shape = SubResource("ConvexPolygonShape3D_22vi2")

@@ -1,61 +1,89 @@
-# 🎮 Computer Graphics Project
+<div align="center">
 
-## 🎲 Overview
-This project is a game developed as part of the **Computer Graphics** undergraduate course. The primary objective is to demonstrate the practical application of rendering, real-time interaction in a virtual environment and other techniques we learn during the course.
-<br>
-<br>
-> ⚠️ **[TO BE DEFINED]** *The sections that follow will be updated throughout the development.*
-<br>
+# 🏰 Castelo da Vânia
+### No coração da Transilvânia, onde o gótico encontra o tecnológico.
 
+![Godot Engine](https://img.shields.io/badge/Godot-4.x-478CBF?style=flat-square&logo=godot-engine&logoColor=white)
+![GDScript](https://img.shields.io/badge/GDScript-478CBF?style=flat-square&logo=godot-engine&logoColor=white)
 
-## 📖 Story & Gameplay
-<br>
+[README in English](README_EN.md)
 
+</div>
 
-## 🛠 Technical Stack
-* **Game Engine:** 
-* **Programming Language:**
-* **Graphics API:** 
-* **Modeling/Assets:** 
-<br>
+---
 
-## 📐 Computer Graphics Concepts
-The implementation leverages fundamental concepts from the course curriculum, specifically:
+## 🧛 A História
 
-* **Coordinate Systems & Transformations:** Handling local, world, view, and projection spaces using matrix multiplication (Translation, Rotation, Scaling).
-* **[TBD]**
-  
-<br>
+Em um mundo que une o horror gótico e o tecnológico, ergue-se o **Castelo da Vânia** — uma narrativa sobre um dever ancestral e escuridão ressurgente.
 
+Após ter seu castelo invadido por monstros malignos, a protagonista **Vânia** decide que é hora de retomar seu lar. Ela não busca glória, mas sim a interrupção de um ciclo de sofrimento que já durou tempo demais.
 
-## 📚 Theoretical References
-The development of this project is based on the following references:
-* **Foley, J. D., et al.** *Computer Graphics: Principles and Practice*.
-* **Shirley, P., et al.** *Fundamentals of Computer Graphics*.
+---
 
-<br>
+## 🗡️ Fases do Jogo
 
+### ⚙️ Fase 1: A Entrada
+O jogo se inicia na área **exterior do castelo**. Vânia se encaminha para a entrada principal e precisa passar pelos primeiros inimigos, os corvos robóticos.
 
-## 📋 Project Roadmap (TO-DO)
-- [ ] Define game Concept and story.
-- [ ] Choose game engine/framework.
-- [ ] Implement basic transformations (MVP Matrices).
-- [ ] Finalize core gameplay mechanics.
-- [ ] Update the technical dcumentation & performance analysis.
+### 🕯️ Fase 2: A Escuridão
+Vânia adentra o castelo, agora **dominado pela escuridão**. Com a visão reduzida, a protagonista precisa desvendar mecânicas únicas até conseguir, finalmente, acender as luzes.
 
-<br>
+### 💻 Fase 3: As Profundezas
+Com o auxílio das luzes agora acesas, Vânia avança pelas **profundezas do castelo** em busca da chave que destrava a passagem até o invasor — onde se inicia o confronto final.
 
-## 👥 Contributors
+---
+
+## 🔧 Stack Técnica
+
+| Componente | Tecnologia |
+|---|---|
+| 🎮 Game Engine | Godot |
+| 💾 Linguagem | .GDScript |
+| 🗿 Modelagem/Assets | TBD |
+
+---
+
+## 🔮 Recursos Gráficos
+
+| Recurso | Descrição | Fase |
+|---|---|---|
+| 🌫️ Névoa | Presente no exterior do castelo | Fase 1 |
+| ✨ Partículas | Nos itens encontrados | Fase 2 |
+| 🩸 Efeito de Dano | Feedback visual ao receber dano | Todas |
+
+---
+
+## 📡 Funções de Câmera
+
+- 🔭 **Zoom no Boss Final** — Câmera dinâmica no confronto da Fase 3
+- 🖥️ **Zoom Dinâmico** — Ajuste de câmera durante a gameplay
+
+---
+
+## 📋 Roadmap
+
+- [x] 🦇 Definir conceito e história do jogo
+- [x] 🏰 Planejar fases e progressão
+- [x] ⚙️ Escolher engine/framework
+- [x] 📹 Implementar zoom dinâmico
+- [ ] 🌫️ Implementar névoa volumétrica (Fase 1)
+- [ ] 🕯️ Implementar mecânica de escuridão/visão reduzida (Fase 2)
+- [ ] ✨ Implementar sistema de partículas (Fase 2)
+- [ ] 🩸 Implementar efeito de dano em todas as fases
+- [ ] 🔭 Implementar funções de câmera (Fase 3)
+- [ ] 📝 Finalizar documentação técnica
+
+---
+
+## 🦇 Contribuidores
 <a href="https://github.com/d-olivr/computer-graphic-game/graphs/contributors">
+
   <img src="https://contrib.rocks/image?repo=d-olivr/computer-graphic-game" />
+
 </a>
-<br>
 
 <br>
 
+---
 
-## 🚀 Getting Started
-*Instructions on how to clone, build, and run the project will be added once the development environment is established.*
-
-1.  `git clone https://github.com/<seu-username>/<seu-repo>.git`
-2.  ...
+<p align="center">🧛 <em>Feito com sangue, suor e shaders.</em> 🖥️</p>
