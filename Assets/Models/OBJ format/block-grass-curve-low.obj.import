@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bleblqaa4gxyf"
+path="res://.godot/imported/block-grass-curve-low.obj-22d1ac45f83eff6e87c6d8ff2ac25d1f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/block-grass-curve-low.obj-22d1ac45f83eff6e87c6d8ff2ac25d1f.mesh"]
+
+source_file="res://Assets/Models/OBJ format/block-grass-curve-low.obj"
+dest_files=["res://.godot/imported/block-grass-curve-low.obj-22d1ac45f83eff6e87c6d8ff2ac25d1f.mesh", "res://.godot/imported/block-grass-curve-low.obj-22d1ac45f83eff6e87c6d8ff2ac25d1f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

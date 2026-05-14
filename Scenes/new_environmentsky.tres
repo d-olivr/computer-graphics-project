@@ -1,0 +1,9 @@
+[gd_resource type="Environment" format=3 uid="uid://ew0tqmqubotu"]
+
+[ext_resource type="Sky" path="res://Assets/Céu/NightSkyHDRI016A_2K.tres" id="1_fcd26"]
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 0.34
+sky = ExtResource("1_fcd26")
+ssr_enabled = true
