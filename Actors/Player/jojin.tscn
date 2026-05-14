@@ -41,7 +41,7 @@ transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, 0, 3.2315555, 
 transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, 0, 3.2315555, 19.435694)
 
 [node name="ObjBarril" type="StaticBody3D" parent="." unique_id=371714372]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8887434, 0.4815911, -7.3766136)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8887434, 0.088338375, -7.3766136)
 collision_layer = 2
 collision_mask = 3
 
@@ -88,6 +88,14 @@ environment = ExtResource("2_n75ht")
 transform = Transform3D(-0.59902394, -0.665644, -0.44507116, 0.1566239, -0.64249694, 0.75011104, -0.7852638, 0.37962568, 0.48912683, -10.007139, 12.772933, -0.2903633)
 light_color = Color(0.8987935, 0.63949424, 0.36891124, 1)
 light_energy = 0.951
+light_specular = 1.317
+shadow_enabled = true
+shadow_bias = 0.74
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=570521683]
+transform = Transform3D(-0.03951505, -0.6073544, -0.79344773, 0.19111902, -0.7840016, 0.5906057, -0.9807712, -0.12830514, 0.14705683, -10.3981, 5.936326, -4.7527103)
+light_color = Color(0.8987935, 0.63949424, 0.36891124, 1)
+light_energy = 0.476
 light_specular = 1.317
 shadow_enabled = true
 shadow_bias = 0.74
