@@ -5,12 +5,7 @@
 [ext_resource type="Environment" uid="uid://ew0tqmqubotu" path="res://Scenes/new_environmentsky.tres" id="2_n75ht"]
 [ext_resource type="Script" uid="uid://bgxdmehye75yw" path="res://Actors/Player/player.gd" id="3_2fkrj"]
 [ext_resource type="PackedScene" uid="uid://l3jjomfco7t2" path="res://Actors/scifi_girl_v.01/scene.gltf" id="4_er3hb"]
-[ext_resource type="ArrayMesh" uid="uid://dhcwb6mqi555u" path="res://Assets/Models/OBJ format/barrel.obj" id="5_vm2jy"]
-[ext_resource type="PackedScene" uid="uid://bbj0vxlc50ao8" path="res://Actors/Objects/arvore/scene.gltf" id="6_er3hb"]
 [ext_resource type="PackedScene" uid="uid://ctcisaim4iehd" path="res://Actors/Objects/plataforma.tscn" id="8_2qw1v"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n75ht"]
-points = PackedVector3Array(0, 0.094016835, -0.2588134, 0, 0.38212693, -0.2588134, 0.18296304, 0.094016835, -0.1830137, 0.13796964, 0, -0.1380203, 0, 0, -0.1951741, -0.1380203, 0, -0.1380203, -0.1830137, 0.094016835, -0.1830137, 0, 0.4761904, -0.1951741, 0.13796964, 0.4761904, -0.1380203, 0.18296304, 0.38212693, -0.1830137, -0.1830137, 0.38212693, -0.1830137, -0.1380203, 0.4761904, -0.1380203, 0.2588134, 0.094016835, 0, 0.19512343, 0, 0, -0.1951741, 0, 0, -0.2588134, 0.094016835, 0, 0.19512343, 0.4761904, 0, 0.2588134, 0.38212693, 0, -0.2588134, 0.38212693, 0, -0.1951741, 0.4761904, 0, 0.18296304, 0.094016835, 0.18296304, 0.13796964, 0, 0.13796964, -0.1380203, 0, 0.13796964, -0.1830137, 0.094016835, 0.18296304, 0.13796964, 0.4761904, 0.13796964, 0.18296304, 0.38212693, 0.18296304, -0.1830137, 0.38212693, 0.18296304, -0.1380203, 0.4761904, 0.13796964, 0, 0.094016835, 0.2588134, 0, 0, 0.19512343, 0, 0.4761904, 0.19512343, 0, 0.38212693, 0.2588134)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ihb7"]
 albedo_color = Color(0.5294118, 0, 0.1254902, 1)
@@ -40,39 +35,6 @@ transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, 0, 3.2315555, 
 [node name="ParedeInvisivelDir" parent="." unique_id=1667435501 instance=ExtResource("1_2fkrj")]
 transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, 0, 3.2315555, 19.435694)
 
-[node name="ObjBarril" type="StaticBody3D" parent="." unique_id=371714372]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8887434, 0.088338375, -7.3766136)
-collision_layer = 2
-collision_mask = 3
-
-[node name="Barrel" type="MeshInstance3D" parent="ObjBarril" unique_id=471580865]
-mesh = ExtResource("5_vm2jy")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjBarril" unique_id=1746427242]
-shape = SubResource("ConvexPolygonShape3D_n75ht")
-
-[node name="ObjBarril2" type="StaticBody3D" parent="." unique_id=1008479384]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6678815, 0.054038882, -8.598204)
-collision_layer = 2
-collision_mask = 3
-
-[node name="Barrel" type="MeshInstance3D" parent="ObjBarril2" unique_id=1977981603]
-mesh = ExtResource("5_vm2jy")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjBarril2" unique_id=1856030471]
-shape = SubResource("ConvexPolygonShape3D_n75ht")
-
-[node name="ObjBarril3" type="StaticBody3D" parent="." unique_id=1283408252]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6678815, 0.54903007, -8.598204)
-collision_layer = 2
-collision_mask = 3
-
-[node name="Barrel" type="MeshInstance3D" parent="ObjBarril3" unique_id=688333582]
-mesh = ExtResource("5_vm2jy")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjBarril3" unique_id=473022820]
-shape = SubResource("ConvexPolygonShape3D_n75ht")
-
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1830026366 node_paths=PackedStringArray("target")]
 transform = Transform3D(0.9967212, -0.08091218, 0, 0.08091218, 0.9967212, 0, 0, 0, 1, 0, 1.459974, 0)
 script = ExtResource("1_er3hb")
@@ -87,7 +49,7 @@ environment = ExtResource("2_n75ht")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1675930548]
 transform = Transform3D(-0.59902394, -0.665644, -0.44507116, 0.1566239, -0.64249694, 0.75011104, -0.7852638, 0.37962568, 0.48912683, -10.007139, 12.772933, -0.2903633)
 light_color = Color(0.8987935, 0.63949424, 0.36891124, 1)
-light_energy = 0.951
+light_energy = 2.535
 light_specular = 1.317
 shadow_enabled = true
 shadow_bias = 0.74
@@ -95,7 +57,7 @@ shadow_bias = 0.74
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=570521683]
 transform = Transform3D(-0.03951505, -0.6073544, -0.79344773, 0.19111902, -0.7840016, 0.5906057, -0.9807712, -0.12830514, 0.14705683, -10.3981, 5.936326, -4.7527103)
 light_color = Color(0.8987935, 0.63949424, 0.36891124, 1)
-light_energy = 0.476
+light_energy = 1.743
 light_specular = 1.317
 shadow_enabled = true
 shadow_bias = 0.74
@@ -104,7 +66,7 @@ shadow_bias = 0.74
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.9893479, 0, 0, 0)
 
 [node name="floor" type="MeshInstance3D" parent="ObjChao" unique_id=471856056]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28709316, 0.06254816, 0.028126223)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27805066, 0.058567643, 0.028118145)
 mesh = SubResource("PlaneMesh_a1yox")
 surface_material_override/0 = SubResource("StandardMaterial3D_2fkrj")
 
@@ -126,12 +88,6 @@ shape = SubResource("CapsuleShape3D_3khbi")
 
 [node name="Sketchfab_Scene" parent="Player" unique_id=369003127 instance=ExtResource("4_er3hb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.124, 1.014)
-
-[node name="Arvore" parent="." unique_id=2032978336 instance=ExtResource("6_er3hb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3964252, -0.043869615, -8.260788)
-
-[node name="Arvore2" parent="." unique_id=1447646118 instance=ExtResource("6_er3hb")]
-transform = Transform3D(-0.8535508, 0, 0.5210096, 0, 1, 0, -0.5210096, 0, -0.8535508, 5.5536337, 0.94293725, 5.6417475)
 
 [node name="Plataforma" parent="." unique_id=771488661 instance=ExtResource("8_2qw1v")]
 transform = Transform3D(1, 0, 0, 0, 0.32195854, 0, 0, 0, 1, 0, 0.41946995, -14.719357)
