@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dvuadafk0bdse"]
+[gd_scene format=3 uid="uid://2sj87kjda8xx"]
 
 [ext_resource type="PackedScene" uid="uid://c7qlbx3r1pagk" path="res://Assets/Outros/barrel.glb" id="1_gh6ev"]
 
@@ -7,7 +7,7 @@ data = PackedVector3Array(0, 0.47619998, -0.1302, 0, 0.39769998, -0.1068, -0.075
 
 [node name="barrel2" unique_id=1783988237 instance=ExtResource("1_gh6ev")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="barrel" parent_id_path=PackedInt32Array(1197478136) index="0" unique_id=1162861602]
+[node name="StaticBody3D" type="StaticBody3D" parent="barrel" parent_id_path=PackedInt32Array(1615480930) index="0" unique_id=1162861602]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="barrel/StaticBody3D" index="0" unique_id=1667814576]
 shape = SubResource("ConcavePolygonShape3D_2dmog")
