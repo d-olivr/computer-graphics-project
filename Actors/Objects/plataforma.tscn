@@ -2,8 +2,7 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_75nek"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6bnv"]
-albedo_color = Color(0.409987, 0.06714876, 0.10369975, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75nek"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_233nj"]
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
@@ -15,7 +14,7 @@ collision_mask = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1330452133]
 mesh = SubResource("BoxMesh_75nek")
-surface_material_override/0 = SubResource("StandardMaterial3D_b6bnv")
+surface_material_override/0 = SubResource("StandardMaterial3D_75nek")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1873921289]
 shape = SubResource("ConvexPolygonShape3D_233nj")
