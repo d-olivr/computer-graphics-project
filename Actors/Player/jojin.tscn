@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://48q2tgtc2muw" path="res://Scripts/view.gd" id="1_er3hb"]
 [ext_resource type="Environment" uid="uid://ew0tqmqubotu" path="res://Scenes/new_environmentsky.tres" id="2_n75ht"]
 [ext_resource type="Script" uid="uid://bgxdmehye75yw" path="res://Actors/Player/player.gd" id="3_2fkrj"]
-[ext_resource type="Texture2D" uid="uid://cqdm7uihytvxe" path="res://Textures/floor_baseColor.png" id="4_2qw1v"]
+[ext_resource type="Texture2D" uid="uid://cqdm7uihytvxe" path="res://Textures/GramaChao.png" id="4_2qw1v"]
 [ext_resource type="PackedScene" uid="uid://c2w4baaq4o6qi" path="res://Assets/Arvore Caida/scene.gltf" id="7_2qw1v"]
 [ext_resource type="PackedScene" uid="uid://ctcisaim4iehd" path="res://Actors/Objects/plataforma.tscn" id="8_2qw1v"]
 [ext_resource type="PackedScene" uid="uid://bmv2k2s5pvbw2" path="res://Actors/Vampira/scene.gltf" id="9_kgp2t"]
@@ -104,11 +104,14 @@ transform = Transform3D(1, 0, 0, 0, 0.32195854, 0, 0, 0, 1, 0, 1.5238277, -13.12
 [node name="Plataforma3" parent="." unique_id=331919177 instance=ExtResource("8_2qw1v")]
 transform = Transform3D(1, 0, 0, 0, 0.32195854, 0, 0, 0, 1, 0, 1.5238277, -10.8671665)
 
-[node name="Plataforma4" parent="." unique_id=1785841467 instance=ExtResource("8_2qw1v")]
-transform = Transform3D(1, 0, 0, 0, 0.32195854, 0, 0, 0, 1, 0, 2.4285913, -9.4531145)
+[node name="Plataforma4" parent="." unique_id=1062521814 instance=ExtResource("8_2qw1v")]
+transform = Transform3D(1, 0, 0, 0, 0.32195854, 0, 0, 0, 1, 0, 2.3100934, -9.042403)
 
-[node name="Plataforma5" parent="." unique_id=693641943 instance=ExtResource("8_2qw1v")]
-transform = Transform3D(1, 0, 0, 0, 0.32195854, 0, 0, 0, 1, 0, 2.4285913, -7.4736834)
+[node name="Plataforma5" parent="." unique_id=290865864 instance=ExtResource("8_2qw1v")]
+transform = Transform3D(1, 0, 0, 0, 0.32195854, 0, 0, 0, 1, 0, 2.3100934, -8.051977)
+
+[node name="Plataforma7" parent="." unique_id=1965408361 instance=ExtResource("8_2qw1v")]
+transform = Transform3D(1, 0, 0, 0, 0.32195854, 0, 0, 0, 1, 0, 2.3100934, -7.064444)
 
 [node name="Plataforma6" parent="." unique_id=1333172275 instance=ExtResource("8_2qw1v")]
 transform = Transform3D(1, 0, 0, 0, 0.32195854, 0, 0, 0, 1, 0, 3.2094796, -5.640259)
