@@ -2,13 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://rcbcqtpw8nn1" path="res://Actors/Objects/parede_invisivel.tscn" id="1_2fkrj"]
 [ext_resource type="Script" uid="uid://48q2tgtc2muw" path="res://Scripts/view.gd" id="1_er3hb"]
-[ext_resource type="Environment" uid="uid://ew0tqmqubotu" path="res://Scenes/new_environmentsky.tres" id="2_n75ht"]
 [ext_resource type="Script" uid="uid://bgxdmehye75yw" path="res://Actors/Player/player.gd" id="3_2fkrj"]
+[ext_resource type="Sky" uid="uid://dlwn4lvmxtkqb" path="res://Assets/TesteCEU/textures/meu_teste_ceu.tres" id="3_txnwe"]
 [ext_resource type="Texture2D" uid="uid://cqdm7uihytvxe" path="res://Textures/GramaChao.png" id="4_2qw1v"]
 [ext_resource type="PackedScene" uid="uid://c2w4baaq4o6qi" path="res://Assets/Arvore Caida/scene.gltf" id="7_2qw1v"]
 [ext_resource type="PackedScene" uid="uid://ctcisaim4iehd" path="res://Actors/Objects/plataforma.tscn" id="8_2qw1v"]
 [ext_resource type="PackedScene" uid="uid://bmv2k2s5pvbw2" path="res://Actors/Vampira/scene.gltf" id="9_kgp2t"]
 [ext_resource type="PackedScene" uid="uid://c2ef3uxtc1efa" path="res://Assets/PackArvores/scene.gltf" id="9_txnwe"]
+[ext_resource type="PackedScene" uid="uid://cfvd27yrhirv3" path="res://Assets/Castelo/sketchfab_scene.tscn" id="10_txnwe"]
+
+[sub_resource type="Environment" id="Environment_kgp2t"]
+background_mode = 2
+sky = ExtResource("3_txnwe")
+sky_custom_fov = 77.9
+sky_rotation = Vector3(-3.1415927, 0, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kgp2t"]
 albedo_texture = ExtResource("4_2qw1v")
@@ -46,10 +53,10 @@ height = 1.9194336
 [node name="World" type="Node3D" unique_id=1779464691]
 
 [node name="ParedeInvisivelEsq" parent="." unique_id=617566977 instance=ExtResource("1_2fkrj")]
-transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, 0, 3.2315555, -19.36757)
+transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, 0, 3.2315555, -22.36757)
 
 [node name="ParedeInvisivelDir" parent="." unique_id=1667435501 instance=ExtResource("1_2fkrj")]
-transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, 0, 3.2315555, 19.435694)
+transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, 0, 7.0221257, 72.74826)
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1830026366 node_paths=PackedStringArray("target")]
 transform = Transform3D(0.9967211, -0.080912165, 0, 0.080912165, 0.9967211, 0, 0, 0, 1, 0, 0.3288467, -3.6664362)
@@ -61,15 +68,24 @@ zoom_maximum = 8.0
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=888962017]
-environment = ExtResource("2_n75ht")
+environment = SubResource("Environment_kgp2t")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1675930548]
 transform = Transform3D(-0.59902394, -0.665644, -0.44507116, 0.1566239, -0.64249694, 0.75011104, -0.7852638, 0.37962568, 0.48912683, -10.007139, 12.772933, -0.2903633)
-light_color = Color(0.73944587, 0.7977301, 0.9574234, 1)
-light_energy = 2.535
+light_color = Color(0.10730902, 0.21232474, 0.26929435, 1)
+light_energy = 2.693
 light_specular = 1.317
 shadow_enabled = true
 shadow_bias = 0.74
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=301277065]
+transform = Transform3D(0.79652995, 0, -0.6045991, 0, 1, 0, 0.6045991, 0, 0.79653, 0, -1.9344883, 0)
+light_color = Color(0.78077096, 0.5639302, 0.2087048, 1)
+light_energy = 2.536
+light_indirect_energy = 12.248
+light_specular = 1.317
+shadow_enabled = true
+shadow_opacity = 0.82
 
 [node name="ObjChao" type="StaticBody3D" parent="." unique_id=7811826]
 transform = Transform3D(10.040898, 0, 0, 0, 1, 0, 0, 0, 11.256837, 10.789228, 0, 0)
@@ -141,7 +157,7 @@ transform = Transform3D(0.0017364821, 0, -0.009848077, 0, 0.01, 0, 0.009848077, 
 shape = SubResource("CylinderShape3D_h2cwq")
 
 [node name="PackArvores" type="StaticBody3D" parent="." unique_id=1280764085]
-transform = Transform3D(0.0034862321, 0, 0.039847787, 0, 0.04, 0, -0.039847787, 0, 0.0034862321, 27.883907, 0, 50.11448)
+transform = Transform3D(0.0039220112, 0, 0.044828765, 0, 0.045, 0, -0.044828765, 0, 0.0039220112, 27.883907, 0, 50.11448)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PackArvores" unique_id=1282172692]
 mesh = SubResource("BoxMesh_h2cwq")
@@ -149,9 +165,35 @@ mesh = SubResource("BoxMesh_h2cwq")
 [node name="Sketchfab_Scene" parent="PackArvores" unique_id=271578254 instance=ExtResource("9_txnwe")]
 
 [node name="PackArvores2" type="StaticBody3D" parent="." unique_id=1999481078]
-transform = Transform3D(-1.7484555e-09, 0, -0.04, 0, 0.04, 0, 0.04, 0, -1.7484555e-09, 6.7836704, 0, -55.670082)
+transform = Transform3D(-1.9670126e-09, 0, -0.045, 0, 0.045, 0, 0.045, 0, -1.9670126e-09, -3.205124, 0, -55.670082)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PackArvores2" unique_id=404257025]
 mesh = SubResource("BoxMesh_h2cwq")
 
 [node name="Sketchfab_Scene" parent="PackArvores2" unique_id=936631293 instance=ExtResource("9_txnwe")]
+
+[node name="PackArvores3" type="StaticBody3D" parent="." unique_id=792023900]
+transform = Transform3D(-0.00703955, 0, -0.044445977, 0, 0.045, 0, 0.044445977, 0, -0.00703955, 7.988222, 0, 13.777998)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PackArvores3" unique_id=13259819]
+mesh = SubResource("BoxMesh_h2cwq")
+
+[node name="Sketchfab_Scene" parent="PackArvores3" unique_id=824632057 instance=ExtResource("9_txnwe")]
+
+[node name="Castelo" parent="." unique_id=1180304402 instance=ExtResource("10_txnwe")]
+transform = Transform3D(-3.934025e-08, 0, -0.9, 0, 0.9, 0, 0.9, 0, -3.934025e-08, 4.1806664, -0.9314656, 43.93147)
+
+[node name="Degrau2" parent="." unique_id=2104513991 instance=ExtResource("8_2qw1v")]
+transform = Transform3D(12.609338, 0, 0, 0, 0.94918156, 0, 0, 0, 1, -0.30214167, -0.4026432, 35.57679)
+
+[node name="Degrau3" parent="." unique_id=1521782325 instance=ExtResource("8_2qw1v")]
+transform = Transform3D(12.609338, 0, 0, 0, 1.1375308, 0, 0, 0, 1.9594829, -0.21302414, -0.16248417, 36.931763)
+
+[node name="Degrau4" parent="." unique_id=959267696 instance=ExtResource("8_2qw1v")]
+transform = Transform3D(13.853221, 0, 0, 0, 1.1375308, 0, 0, 0, 1.9594829, -0.13854504, 0.5755862, 37.520554)
+
+[node name="Degrau5" parent="." unique_id=550916337 instance=ExtResource("8_2qw1v")]
+transform = Transform3D(13.853221, 0, 0, 0, 1.1375308, 0, 0, 0, 1.9594829, -0.13854504, 1.2770886, 38.902546)
+
+[node name="Degrau6" parent="." unique_id=547544677 instance=ExtResource("8_2qw1v")]
+transform = Transform3D(13.853221, 0, 0, 0, 1.1375308, 0, 0, 0, 24.782251, -0.13854504, 2.0068572, 51.786793)

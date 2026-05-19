@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cfvd27yrhirv3"]
+
+[ext_resource type="PackedScene" uid="uid://cfr5hj7ts40iv" path="res://Assets/Castelo/scene.gltf" id="1_3ihv7"]
+
+[node name="Sketchfab_Scene" unique_id=1180304402 instance=ExtResource("1_3ihv7")]
+
+[node name="polySurface549" parent="Sketchfab_model/791ac6085c154da8a5833fbd41aaf772_fbx/Object_2/RootNode/polySurface547" parent_id_path=PackedInt32Array(1698673208) index="1" unique_id=2038994356]
+transform = Transform3D(0.9864488, -0.039809357, -0.15916647, -0.041452777, 0.8781706, -0.47654793, 0.15874639, 0.476688, 0.8646202, 0.5613803, 7.507222, 10.815292)
+
+[node name="polySurface587" parent="Sketchfab_model/791ac6085c154da8a5833fbd41aaf772_fbx/Object_2/RootNode/polySurface547" parent_id_path=PackedInt32Array(1698673208) index="3" unique_id=384822775]
+transform = Transform3D(-0.9824825, 0.023021389, -0.1849266, -0.016151607, 0.9780864, 0.20757192, 0.1856528, 0.2069227, -0.9605809, 0.18767802, 7.507222, -1.4559985)
+
+[node name="nurbsCircle1" parent="Sketchfab_model/791ac6085c154da8a5833fbd41aaf772_fbx/Object_2/RootNode" parent_id_path=PackedInt32Array(164731796) index="37" unique_id=32046538]
+transform = Transform3D(-0.98644894, 0.039809387, 0.15916653, -0.041452777, 0.87817067, -0.476548, -0.15874647, -0.47668803, -0.8646203, 0.20159729, 7.038169, -1.3235136)
+
+[node name="nurbsCircle2" parent="Sketchfab_model/791ac6085c154da8a5833fbd41aaf772_fbx/Object_2/RootNode" parent_id_path=PackedInt32Array(164731796) index="38" unique_id=257794121]
+transform = Transform3D(0.9824826, -0.02302133, 0.18492638, -0.016151609, 0.9780864, 0.20757195, -0.18565254, -0.20692271, 0.9605811, 0.57529956, 7.038169, 10.947777)
