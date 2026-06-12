@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://curnvl3of8a3k"]
+
+[ext_resource type="Script" uid="uid://bg1g31v04f1na" path="res://Assets/item_cura.gd" id="1_8bf13"]
+[ext_resource type="PackedScene" uid="uid://c5pvgd0aeajm7" path="res://Assets/life_potion.glb" id="2_ibbe2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ftcwa"]
+
+[node name="ItemCura" type="Area3D" unique_id=1263806918]
+script = ExtResource("1_8bf13")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1394157514]
+shape = SubResource("SphereShape3D_ftcwa")
+
+[node name="Sketchfab_Scene" parent="." unique_id=1385966272 instance=ExtResource("2_ibbe2")]

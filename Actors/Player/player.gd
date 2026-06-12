@@ -4,6 +4,15 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 5.5
 
 @onready var visual_node: Node3D = $VisualVampira
+@onready var barra_vida: ProgressBar = %BarraVida
+# --- VARIÁVEIS DE CONTROLE DE VIDA ---
+@export var max_health: int = 100
+var current_health: int
+
+# --- FUNÇÃO CHAMADA AO INICIAR O JOGO ---
+func _ready():
+	# A Vânia sempre começará com a vida cheia
+	current_health = max_health
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -28,3 +37,13 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+	# --- FUNÇÃO DE CURA ---
+func heal(amount: int):
+	current_health += amount
+	
+	# Impede que a vida ultrapasse o limite máximo
+	if current_health > max_health:
+		current_health = max_health
+		
+	print("Vânia curada! Vida atual: ", current_health)
