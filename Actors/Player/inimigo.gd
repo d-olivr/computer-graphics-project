@@ -8,6 +8,10 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var health_component: HealthComponent = $HealthComponent2
 
+func _ready() -> void:
+	# Liga o grito de "morreu" do HealthComponent com a função de sumir do inimigo
+	health_component.died.connect(_on_health_component_died)
+
 func _physics_process(delta: float) -> void:
 	# 1. Aplica a gravidade (Eixo Y - para baixo)
 	if not is_on_floor():
