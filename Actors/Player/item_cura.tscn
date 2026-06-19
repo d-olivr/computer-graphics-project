@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://so1nfl6nwipt"]
+
+[ext_resource type="Script" uid="uid://co0dn5yyspnv3" path="res://Actors/Player/item_cura.gd" id="1_lkjc0"]
+[ext_resource type="PackedScene" uid="uid://drus0kixukqj8" path="res://life_potion.glb" id="2_aektq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1rlgi"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_se6hm"]
+
+[node name="ItemCura" type="Area3D" unique_id=1995350387]
+script = ExtResource("1_lkjc0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1023748859]
+shape = SubResource("BoxShape3D_1rlgi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=719338425]
+visible = false
+mesh = SubResource("SphereMesh_se6hm")
+
+[node name="Sketchfab_Scene" parent="." unique_id=1865474230 instance=ExtResource("2_aektq")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

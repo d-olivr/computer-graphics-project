@@ -53,3 +53,7 @@ func _input(event: InputEvent) -> void:
 			MOUSE_BUTTON_WHEEL_DOWN:
 				zoom += zoom_speed
 		zoom = clamp(zoom, zoom_minimum, zoom_maximum)
+
+
+func _on_zona_de_dano_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
