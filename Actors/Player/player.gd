@@ -8,6 +8,12 @@ const JUMP_VELOCITY = 5.5
 @onready var area_ataque: Area3D = $AreaAtaque
 @onready var hud: CanvasLayer = $HUD
 
+# --- VARIÁVEIS DE ILUMINAÇÃO ---
+@export var luz_lanterna: Node3D
+@export var velocidade_luz: float = 5.0 # Controla a rapidez com que a luz segue a Vânia
+
+
+
 var spawn_position: Vector3
 
 func _ready() -> void:
@@ -87,6 +93,17 @@ func heal(amount: int) -> void:
 
 func take_damage(amount: int) -> void:
 	health_component.take_damage(amount)
+
+func _process(delta: float) -> void:
+	# Verifica se atribuímos uma luz no Inspetor
+	if luz_lanterna:
+		# Define a posição onde a luz deve tentar chegar (ex: 1.5 metros acima do chão)
+		var posicao_alvo = global_position + Vector3(0, 1.5, 0)
+		
+		# O segredo da suavização (lerp): desliza a posição atual até ao alvo
+		luz_lanterna.global_position = luz_lanterna.global_position.lerp(posicao_alvo, velocidade_luz * delta)
+
+
 
 func _on_player_died() -> void:
 	print("Vânia morreu!")
