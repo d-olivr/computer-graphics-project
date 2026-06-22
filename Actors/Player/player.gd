@@ -8,11 +8,20 @@ const JUMP_VELOCITY = 5.5
 @onready var area_ataque: Area3D = $AreaAtaque
 @onready var hud: CanvasLayer = $HUD
 
+var spawn_position: Vector3
+
 func _ready() -> void:
 	axis_lock_linear_x = true
+
+	spawn_position = global_position
+
 	health_component.health_changed.connect(hud.update_health)
 	health_component.died.connect(_on_player_died)
-	hud.update_health(health_component.current_health, health_component.max_health)
+
+	hud.update_health(
+		health_component.current_health,
+		health_component.max_health
+	)
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -48,9 +57,29 @@ func atacar() -> void:
 		if corpo.has_method("take_damage") and corpo != self:
 			corpo.take_damage(40)
 			print("Vânia acertou: ", corpo.name)
+func heal(amount: int) -> void:
+	health_component.current_health += amount
 
+	if health_component.current_health > health_component.max_health:
+		health_component.current_health = health_component.max_health
+
+	hud.update_health(
+		health_component.current_health,
+		health_component.max_health
+	)
 func take_damage(amount: int) -> void:
 	health_component.take_damage(amount)
 
 func _on_player_died() -> void:
-	print("Fim de jogo!")
+	print("Vânia morreu!")
+
+	global_position = spawn_position
+
+	health_component.current_health = health_component.max_health
+
+	hud.update_health(
+		health_component.current_health,
+		health_component.max_health
+	)
+
+	velocity = Vector3.ZERO
