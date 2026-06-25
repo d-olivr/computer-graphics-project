@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://hmaipry3hm62"]
+
+[ext_resource type="Script" uid="uid://biqte8ndagkth" path="res://Scenes/main_menu.gd" id="1_28flt"]
+
+[node name="MainMenu" type="Control" unique_id=809624705]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1285163110]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.44705883, 0.18431373, 0.21568628, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=483251806]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1319658719]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=195027600]
+layout_mode = 2
+text = "Iniciar Jogo"
+
+[node name="StoryButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1598127963]
+layout_mode = 2
+text = "História"
+
+[node name="CreditsButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=596248020]
+layout_mode = 2
+text = "Criadores"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/StoryButton" to="." method="_on_story_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]

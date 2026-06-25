@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bbmcc31ndw85h"]
+
+[ext_resource type="Script" uid="uid://bgynljragj3ca" path="res://Scenes/story_scene.gd" id="1_by0se"]
+
+[node name="CreditsScene" type="Control" unique_id=1013907934]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_by0se")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2054785391]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.44705883, 0.18431373, 0.21568628, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1321805721]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 138.0
+offset_right = 1114.0
+offset_bottom = 542.0
+text = "																											Criadoras:
+
+
+
+																								  Alicia Silva Nascimento
+							
+																								Bruna de Andrade da Silva
+
+																							Bruna Luísa Costa Reis dos Santos
+
+																						Maria Eduarda Oliveira de Amorim Menezes
+
+																									"
+
+[node name="Button" type="Button" parent="." unique_id=1445719160]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 46.0
+offset_right = 188.0
+offset_bottom = 77.0
+text = "Voltar"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

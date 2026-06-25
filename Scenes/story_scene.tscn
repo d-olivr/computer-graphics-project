@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bevuma8uvw3ol"]
+
+[ext_resource type="Script" uid="uid://bgynljragj3ca" path="res://Scenes/story_scene.gd" id="1_glv0h"]
+
+[node name="StoryScene" type="Control" unique_id=1013907934]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glv0h")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2054785391]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.44705883, 0.18431373, 0.21568628, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1321805721]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 182.0
+offset_right = 1091.0
+offset_bottom = 586.0
+text = "No coração da Transilvânia, em um mundo que une o gótico e o tecnológico, ergue-se uma lenda que atravessa séculos. O jogo Castelo da Vânia mergulha o jogador em uma narrativa de horror gótico e dever ancestral, focando na luta da personagem principal, Vânia, contra o despertar do mal absoluto nos corredores de seu lar.
+
+Quando a Lua de Sangue tinge o céu da Transilvânia, o véu entre as eras se rompe. Do amanhã, surge o pior pesadelo de sua linhagem: um antigo inimigo da família que viaja no tempo com um exército aliado para roubar o controle do castelo.
+
+Vânia tem até o amanhecer para selá-lo de volta ao futuro, antes que ele finque suas raízes neste mundo e se torne forte demais para ser detido. O selamento é apenas uma solução temporária: se ela for capaz de derrota-lo de vez, ela encerrará, para sempre, um ciclo de dor que já assombra sua família há gerações.
+"
+
+[node name="Button" type="Button" parent="." unique_id=1445719160]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 46.0
+offset_right = 188.0
+offset_bottom = 77.0
+text = "Voltar"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
