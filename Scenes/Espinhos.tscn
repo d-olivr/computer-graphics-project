@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bnhd4oi1ynxkb"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_kfnrk"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" unique_id=966587351]
+transform = Transform3D(0.36345696, 0, -0.019185875, 0, 1.0450097, 0, 0.25055435, 0, 0.027831247, 0, 0, 0)
+mesh = SubResource("PrismMesh_kfnrk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=361089298]
+transform = Transform3D(1.2378964, 0, -0.0071364464, 0, 1.0450097, 0, 0.23218203, 0, 0.038048692, 0.5789852, 0.11345467, 3.4543)
+mesh = SubResource("PrismMesh_kfnrk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=800353161]
+transform = Transform3D(-1.375269, 0, 0.008406006, 0, 0.8199351, 0, -0.27737808, 0, -0.04167782, 0.8555355, 0.13264358, 8.693268)
+mesh = SubResource("PrismMesh_kfnrk")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1077965689]
+transform = Transform3D(-1.155489, 0, 0.01764623, 0, 0.6663768, 0, -0.47751045, 0, -0.04270079, 1.359705, 0.22439289, 18.244247)
+mesh = SubResource("PrismMesh_kfnrk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D3" unique_id=1047838903]
+transform = Transform3D(0.36345705, 0, -0.019185876, 0, 1.0450097, 0, 0.25054932, 0, 0.027831316, 0.5495949, 0.11345455, -0.27246094)
+mesh = SubResource("PrismMesh_kfnrk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D3" unique_id=2090669296]
+transform = Transform3D(0.42141306, 0, 0.010068642, 0, 0.8199347, 0, -0.13148975, 0, 0.032269165, 0.8555355, 0.13264355, 8.693268)
+mesh = SubResource("PrismMesh_kfnrk")
