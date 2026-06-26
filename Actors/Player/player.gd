@@ -33,6 +33,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
 
 	# Pulo
 	if Input.is_action_just_pressed("ui_select") and is_on_floor():
@@ -76,7 +77,7 @@ func _physics_process(delta: float) -> void:
 			SPEED
 		)
 
-	velocity.x = 0
+	#velocity.x = 0
 	
 	# --- NOVO: CONTROLE DE ANIMAÇÕES ---
 	# 1. Verificamos se a animação de ataque está tocando
