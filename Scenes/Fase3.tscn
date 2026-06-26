@@ -14,11 +14,13 @@
 [ext_resource type="PackedScene" uid="uid://ctcisaim4iehd" path="res://Actors/Objects/plataforma.tscn" id="11_mak8r"]
 [ext_resource type="Texture2D" uid="uid://d4wgq7u8ttun" path="res://Assets/Medieval_Castle_Kit_4K/RenderCrate-Medieval_Castle_Kit/Content/maps/Variation_Light_Bricks/Castle_Walls_BaseColor.png" id="12_ca651"]
 [ext_resource type="Script" uid="uid://c5db56gwtd1et" path="res://Actors/Player/zona_de_dano.gd" id="13_a5d2j"]
-[ext_resource type="PackedScene" uid="uid://cfnxgkydey4rp" path="res://Actors/Player/inimigo.tscn" id="14_ph62k"]
+[ext_resource type="PackedScene" uid="uid://dbg8jlb1e1ar8" path="res://Actors/Player/PlatafomaHorizontal.tscn" id="13_kyheh"]
+[ext_resource type="Texture2D" uid="uid://bn1j81gbbtpie" path="res://Textures/Floor Tiles - MAN MADE/STONE/Stone 9 FULL.png" id="14_bjfq4"]
 [ext_resource type="PackedScene" uid="uid://so1nfl6nwipt" path="res://Actors/Player/item_cura.tscn" id="15_r8sov"]
 [ext_resource type="PackedScene" uid="uid://bnhd4oi1ynxkb" path="res://Scenes/Espinhos.tscn" id="17_kkxte"]
 [ext_resource type="PackedScene" uid="uid://dy7vuou2ebypg" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrel_large.gltf" id="18_n3i02"]
 [ext_resource type="PackedScene" uid="uid://r54ydq2p17lv" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrel_small_stack.gltf" id="19_kyheh"]
+[ext_resource type="ArrayMesh" uid="uid://cn03wvlqik23u" path="res://Assets/Models/OBJ format/door-rotate.obj" id="21_12kf1"]
 
 [sub_resource type="Environment" id="Environment_kgp2t"]
 background_mode = 2
@@ -82,7 +84,16 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hmcof")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_31lm4"]
-size = Vector3(1, 1.3934326, 1.9690247)
+size = Vector3(1, 1.3934326, 1.6533356)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mutai"]
+albedo_texture = ExtResource("14_bjfq4")
+uv1_scale = Vector3(8, 8, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nlpc0"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xa8ef"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="Animation" id="Animation_se6hm"]
 resource_name = "GiraProprioEixo"
@@ -177,10 +188,10 @@ data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0,
 [node name="World" type="Node3D" unique_id=1779464691]
 
 [node name="ParedeInvisivelEsq" parent="." unique_id=617566977 instance=ExtResource("1_dj4vy")]
-transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, -0.003161788, 3.2275953, -19.445152)
+transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, -0.003161788, 3.2275953, -21.039804)
 
 [node name="ParedeInvisivelDir" parent="." unique_id=1667435501 instance=ExtResource("1_dj4vy")]
-transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, 2.265998, 1.8461623, 38.299393)
+transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, 2.265998, 1.8461623, 40.142113)
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1830026366 node_paths=PackedStringArray("target")]
 transform = Transform3D(0.9967211, -0.080912165, 0, 0.080912165, 0.9967211, 0, 0, 0, 1, 0, 0.3288467, -3.6664362)
@@ -324,18 +335,16 @@ mesh = SubResource("ArrayMesh_qwxgd")
 script = ExtResource("13_a5d2j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ZonaDeDano" unique_id=922341421]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19671631, -6.8756804)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19671631, -7.033525)
 shape = SubResource("BoxShape3D_31lm4")
 
-[node name="Inimigo" parent="." unique_id=900576037 instance=ExtResource("14_ph62k")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.05874586, 0.755599, 33.2821)
+[node name="PlatHoriz13" parent="ZonaDeDano/CollisionShape3D" unique_id=1315878176 instance=ExtResource("13_kyheh")]
+transform = Transform3D(6.7438526, 0, 0, 0, 12.744268, 0, 0, 0, 36.400105, 1.623559, 11.062825, 4.4951367)
+material_override = SubResource("StandardMaterial3D_mutai")
+mesh = SubResource("BoxMesh_nlpc0")
 
-[node name="Inimigo2" parent="." unique_id=1654255996 instance=ExtResource("14_ph62k")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.08516765, 2.5436416, -5.9681406)
-platform_on_leave = 1
-
-[node name="Inimigo3" parent="." unique_id=811708516 instance=ExtResource("14_ph62k")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.05039549, 0.83610845, 21.961708)
+[node name="CollisionShape3D" parent="ZonaDeDano/CollisionShape3D/PlatHoriz13/StaticBody3D" parent_id_path=PackedInt32Array(1315878176, 1242720974) index="0" unique_id=1870018349]
+shape = SubResource("ConcavePolygonShape3D_xa8ef")
 
 [node name="Itens" type="Node3D" parent="." unique_id=1549225247]
 
@@ -355,7 +364,7 @@ transform = Transform3D(0.6062789, 0, 0, 0, 0.6478406, 0, 0, 0, 0.7121932, 3.718
 [node name="barrel_small_stack2" parent="." unique_id=547414112 instance=ExtResource("19_kyheh")]
 transform = Transform3D(-0.008206212, 0, -1.1382179, 0, 0.78738993, 0, 0.6944777, 0, -0.013449617, 0.14697695, 0.17988086, -15.6226845)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="barrel_small_stack2/barrel_small_stack" parent_id_path=PackedInt32Array(547414112, 1816149021) index="0" unique_id=950003666]
+[node name="StaticBody3D" type="StaticBody3D" parent="barrel_small_stack2/barrel_small_stack" parent_id_path=PackedInt32Array(547414112, 1019973887) index="0" unique_id=950003666]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="barrel_small_stack2/barrel_small_stack/StaticBody3D" unique_id=1844201282]
 shape = SubResource("ConcavePolygonShape3D_pfneb")
@@ -375,7 +384,21 @@ surface_material_override/0 = SubResource("StandardMaterial3D_2fkrj")
 shape = SubResource("ConcavePolygonShape3D_n3i02")
 metadata/_edit_lock_ = true
 
+[node name="PlatHoriz13" parent="." unique_id=605822152 instance=ExtResource("13_kyheh")]
+transform = Transform3D(6.7438526, 0, 0, 0, 12.744268, 0, 0, 0, 69.942894, 1.623559, 22.931095, 9.709288)
+material_override = SubResource("StandardMaterial3D_mutai")
+mesh = SubResource("BoxMesh_nlpc0")
+
+[node name="CollisionShape3D" parent="PlatHoriz13/StaticBody3D" parent_id_path=PackedInt32Array(605822152, 1242720974) index="0" unique_id=1870018349]
+shape = SubResource("ConcavePolygonShape3D_xa8ef")
+
+[node name="DoorRotate" type="MeshInstance3D" parent="." unique_id=876690746]
+transform = Transform3D(2.2273393, 0, 0, 0, 2.7008452, 0.013947685, 0, -0.03856203, 0.9768817, 0.20368205, 0.20576245, -20.294975)
+mesh = ExtResource("21_12kf1")
+
 [connection signal="body_entered" from="ZonaDeDano" to="CameraPivot" method="_on_zona_de_dano_body_entered"]
 [connection signal="body_entered" from="ZonaDeDano" to="ZonaDeDano" method="_on_body_entered"]
 
+[editable path="ZonaDeDano/CollisionShape3D/PlatHoriz13"]
 [editable path="barrel_small_stack2"]
+[editable path="PlatHoriz13"]
