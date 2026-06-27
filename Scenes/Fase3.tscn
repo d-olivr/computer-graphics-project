@@ -21,6 +21,11 @@
 [ext_resource type="PackedScene" uid="uid://dy7vuou2ebypg" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrel_large.gltf" id="18_n3i02"]
 [ext_resource type="PackedScene" uid="uid://r54ydq2p17lv" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrel_small_stack.gltf" id="19_kyheh"]
 [ext_resource type="ArrayMesh" uid="uid://cn03wvlqik23u" path="res://Assets/Models/OBJ format/door-rotate.obj" id="21_12kf1"]
+[ext_resource type="Script" uid="uid://01xgf6lkj5f1" path="res://Actors/Player/inimigo.gd" id="22_xa8ef"]
+[ext_resource type="PackedScene" uid="uid://chmp7ml5j4a4o" path="res://Actors/Noel.tscn" id="23_mak8r"]
+[ext_resource type="PackedScene" uid="uid://c3y80cwao3408" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/torch_lit.gltf" id="24_ca651"]
+[ext_resource type="Texture2D" uid="uid://i3j3crmsaxh5" path="res://Textures/T_fire01.png" id="25_a5d2j"]
+[ext_resource type="Texture2D" uid="uid://cv30hsxwchiic" path="res://Textures/T_VFX_Glow_1.PNG" id="26_ph62k"]
 
 [sub_resource type="Environment" id="Environment_kgp2t"]
 background_mode = 2
@@ -84,7 +89,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hmcof")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_31lm4"]
-size = Vector3(1, 1.3934326, 1.6533356)
+size = Vector3(1, 1.3934326, 1.0299387)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mutai"]
 albedo_texture = ExtResource("14_bjfq4")
@@ -184,6 +189,111 @@ normal_texture = ExtResource("4_n3i02")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_n3i02"]
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mxlkv"]
+height = 2.7060547
+radius = 0.8251953
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tdhli"]
+radius = 1.0083008
+height = 3.326263
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8sov"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("25_a5d2j")
+albedo_texture_force_srgb = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_6c4sy"]
+_data = [Vector2(0.6851852, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0038911104), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_d3jtn"]
+texture_mode = 1
+curve = SubResource("Curve_6c4sy")
+
+[sub_resource type="Gradient" id="Gradient_kkxte"]
+offsets = PackedFloat32Array(0.2802198, 0.5989011, 1)
+colors = PackedColorArray(14.325011, 9.9422035, 9.926241, 1, 0.11372549, 0.47843137, 0.56078434, 1, 0.022578366, 0.0064483224, 0.019352479, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j5co3"]
+gradient = SubResource("Gradient_kkxte")
+
+[sub_resource type="Curve" id="Curve_2qqci"]
+_data = [Vector2(0, 0.47081715), 0.0, 0.0, 0, 0, Vector2(0.16666666, 0.7509728), 1.2854201, 1.2854201, 0, 0, Vector2(0.99999, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_smogm"]
+curve = SubResource("Curve_2qqci")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1ebi1"]
+lifetime_randomness = 0.08
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.2
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(0, 1, 0)
+spread = 16.428
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 0.49997765
+gravity = Vector3(0, 1, 0)
+scale_min = 0.089999996
+scale_curve = SubResource("CurveTexture_smogm")
+color = Color(2.921, 1.14, 0, 1)
+color_ramp = SubResource("GradientTexture1D_j5co3")
+alpha_curve = SubResource("CurveTexture_d3jtn")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8fqtv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iixlx"]
+render_priority = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("26_ph62k")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_uvuje"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.1981132, 0.9066148), 0.0, 0.0, 0, 0, Vector2(0.3018868, 0.51750976), 0.0, 0.0, 0, 0, Vector2(0.36792454, 0.8599222), 0.0, 0.0, 0, 0, Vector2(0.46226415, 0.79766536), 0.0, 0.0, 0, 0, Vector2(0.52830195, 0), 0.0, 0.0, 0, 0, Vector2(0.5896226, 0.6731518), 0.0, 0.0, 0, 0, Vector2(0.67452836, 1), 0.0, 0.0, 0, 0, Vector2(0.7169812, 0.25291836), 0.0, 0.0, 0, 0, Vector2(0.8349056, 0.9066148), 0.0, 0.0, 0, 0, Vector2(1, 0.34630352), 0.0, 0.0, 0, 0]
+point_count = 11
+
+[sub_resource type="CurveTexture" id="CurveTexture_nwya7"]
+curve = SubResource("Curve_uvuje")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qkqxl"]
+lifetime_randomness = 1.0
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 0.6
+emission_ring_inner_radius = 0.4
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 1, 0)
+spread = 25.435
+initial_velocity_min = 0.5
+initial_velocity_max = 2.0
+gravity = Vector3(0, 1, 0)
+scale_min = 0.04
+scale_max = 0.089999996
+scale_curve = SubResource("CurveTexture_nwya7")
+color = Color(1.706018, 1.0317875, 0.3444652, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ku2vn"]
 
 [node name="World" type="Node3D" unique_id=1779464691]
 
@@ -335,7 +445,7 @@ mesh = SubResource("ArrayMesh_qwxgd")
 script = ExtResource("13_a5d2j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ZonaDeDano" unique_id=922341421]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19671631, -7.033525)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19671631, -7.057618)
 shape = SubResource("BoxShape3D_31lm4")
 
 [node name="PlatHoriz13" parent="ZonaDeDano/CollisionShape3D" unique_id=1315878176 instance=ExtResource("13_kyheh")]
@@ -364,7 +474,7 @@ transform = Transform3D(0.6062789, 0, 0, 0, 0.6478406, 0, 0, 0, 0.7121932, 3.718
 [node name="barrel_small_stack2" parent="." unique_id=547414112 instance=ExtResource("19_kyheh")]
 transform = Transform3D(-0.008206212, 0, -1.1382179, 0, 0.78738993, 0, 0.6944777, 0, -0.013449617, 0.14697695, 0.17988086, -15.6226845)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="barrel_small_stack2/barrel_small_stack" parent_id_path=PackedInt32Array(547414112, 1019973887) index="0" unique_id=950003666]
+[node name="StaticBody3D" type="StaticBody3D" parent="barrel_small_stack2/barrel_small_stack" parent_id_path=PackedInt32Array(547414112, 1816149021) index="0" unique_id=950003666]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="barrel_small_stack2/barrel_small_stack/StaticBody3D" unique_id=1844201282]
 shape = SubResource("ConcavePolygonShape3D_pfneb")
@@ -396,8 +506,191 @@ shape = SubResource("ConcavePolygonShape3D_xa8ef")
 transform = Transform3D(2.2273393, 0, 0, 0, 2.7008452, 0.013947685, 0, -0.03856203, 0.9768817, 0.20368205, 0.20576245, -20.294975)
 mesh = ExtResource("21_12kf1")
 
+[node name="PPnoel" type="CharacterBody3D" parent="." unique_id=900576037]
+transform = Transform3D(-0.771925, 0, -0.17421857, 0, 0.8704137, 0, 0.12592354, 0, -1.0679791, -0.05039549, 1.465778, 34.856304)
+script = ExtResource("22_xa8ef")
+
+[node name="HealthComponent2" type="Node" parent="PPnoel" unique_id=1798799287]
+script = ExtResource("6_bjfq4")
+
+[node name="HitboxDano" type="Area3D" parent="PPnoel" unique_id=344622581]
+transform = Transform3D(1, 0, 4.4703484e-08, 0, 0.99999976, 0, 0, 0, 0.9999998, -0.124083996, 0, 0.5497875)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PPnoel/HitboxDano" unique_id=898989559]
+shape = SubResource("CylinderShape3D_mxlkv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PPnoel" unique_id=255817754]
+transform = Transform3D(1.3718467, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_tdhli")
+
+[node name="idleWS2" parent="PPnoel" unique_id=936533426 instance=ExtResource("23_mak8r")]
+transform = Transform3D(2.1699224, 0, 0, 0, 1.4542885, 0, 0, 0, 1.7121643, 0, -1.4061937, 0)
+
+[node name="torch_lit2" parent="." unique_id=981056446 instance=ExtResource("24_ca651")]
+transform = Transform3D(0.9025177, -0.43065286, 0, 0.43065286, 0.9025177, 0, 0, 0, 1, 4.367921, 2.1389396, 35.410572)
+
+[node name="PartículasFogo" type="Node3D" parent="torch_lit2" unique_id=264045903]
+transform = Transform3D(0.011554388, 0, -0.023417946, 0, 0.2794895, 0, 0.14471322, 0, 0.0018697673, 0.78889513, 0.01792869, 0.26980972)
+
+[node name="Fogo" type="GPUParticles3D" parent="torch_lit2/PartículasFogo" unique_id=1923440736]
+transform = Transform3D(0.039795026, 0, -0.49841383, 0, 0.5, 0, 0.49841383, 0, 0.039795026, -2.3556185, 1.8309706, 32.563133)
+material_override = SubResource("StandardMaterial3D_r8sov")
+amount = 50
+lifetime = 1.2
+process_material = SubResource("ParticleProcessMaterial_1ebi1")
+draw_pass_1 = SubResource("QuadMesh_8fqtv")
+
+[node name="Faísca" type="GPUParticles3D" parent="torch_lit2/PartículasFogo" unique_id=1883543928]
+transform = Transform3D(6.1963463, -0.0143853165, 0.03883189, 0.026247736, 3.3863773, 0.45408598, -0.006427765, -0.039146896, 39.266033, -2.7600708, 3.0228262, 32.361313)
+material_override = SubResource("StandardMaterial3D_iixlx")
+amount = 35
+process_material = SubResource("ParticleProcessMaterial_qkqxl")
+draw_pass_1 = SubResource("QuadMesh_ku2vn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="torch_lit2/PartículasFogo" unique_id=992263644]
+transform = Transform3D(6.8882966, 0, -5.9604645e-08, 0, 3.5779521, 0, 2.3841858e-07, 0, 42.566822, -2.5377808, 2.607687, 30.269608)
+light_color = Color(1.6153606, 0.9634218, 0, 1)
+light_energy = 1.362
+omni_range = 1.8724588
+
+[node name="torch_lit3" parent="." unique_id=2102213529 instance=ExtResource("24_ca651")]
+transform = Transform3D(0.9025177, -0.43065286, 0, 0.43065286, 0.9025177, 0, 0, 0, 1, 4.367921, 2.1389396, 30.944843)
+
+[node name="PartículasFogo" type="Node3D" parent="torch_lit3" unique_id=187966554]
+transform = Transform3D(0.011554388, 0, -0.023417946, 0, 0.2794895, 0, 0.14471322, 0, 0.0018697673, 0.78889513, 0.01792869, 0.26980972)
+
+[node name="Fogo" type="GPUParticles3D" parent="torch_lit3/PartículasFogo" unique_id=1688990965]
+transform = Transform3D(0.039795026, 0, -0.49841383, 0, 0.5, 0, 0.49841383, 0, 0.039795026, -2.3556185, 1.8309706, 32.563133)
+material_override = SubResource("StandardMaterial3D_r8sov")
+amount = 50
+lifetime = 1.2
+process_material = SubResource("ParticleProcessMaterial_1ebi1")
+draw_pass_1 = SubResource("QuadMesh_8fqtv")
+
+[node name="Faísca" type="GPUParticles3D" parent="torch_lit3/PartículasFogo" unique_id=1522390117]
+transform = Transform3D(6.1963463, -0.0143853165, 0.03883189, 0.026247736, 3.3863773, 0.45408598, -0.006427765, -0.039146896, 39.266033, -2.7600708, 3.0228262, 32.361313)
+material_override = SubResource("StandardMaterial3D_iixlx")
+amount = 35
+process_material = SubResource("ParticleProcessMaterial_qkqxl")
+draw_pass_1 = SubResource("QuadMesh_ku2vn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="torch_lit3/PartículasFogo" unique_id=1004990120]
+transform = Transform3D(6.8882966, 0, -5.9604645e-08, 0, 3.5779521, 0, 2.3841858e-07, 0, 42.566822, -2.5377808, 2.607687, 30.269608)
+light_color = Color(1.6153606, 0.9634218, 0, 1)
+light_energy = 1.362
+omni_range = 1.8724588
+
+[node name="torch_lit4" parent="." unique_id=1693849627 instance=ExtResource("24_ca651")]
+transform = Transform3D(0.9025177, -0.43065286, 0, 0.43065286, 0.9025177, 0, 0, 0, 1, 4.367921, 2.1389396, 26.407381)
+
+[node name="PartículasFogo" type="Node3D" parent="torch_lit4" unique_id=193892442]
+transform = Transform3D(0.011554388, 0, -0.023417946, 0, 0.2794895, 0, 0.14471322, 0, 0.0018697673, 0.78889513, 0.01792869, 0.26980972)
+
+[node name="Fogo" type="GPUParticles3D" parent="torch_lit4/PartículasFogo" unique_id=261698972]
+transform = Transform3D(0.039795026, 0, -0.49841383, 0, 0.5, 0, 0.49841383, 0, 0.039795026, -2.3556185, 1.8309706, 32.563133)
+material_override = SubResource("StandardMaterial3D_r8sov")
+amount = 50
+lifetime = 1.2
+process_material = SubResource("ParticleProcessMaterial_1ebi1")
+draw_pass_1 = SubResource("QuadMesh_8fqtv")
+
+[node name="Faísca" type="GPUParticles3D" parent="torch_lit4/PartículasFogo" unique_id=355621697]
+transform = Transform3D(6.1963463, -0.0143853165, 0.03883189, 0.026247736, 3.3863773, 0.45408598, -0.006427765, -0.039146896, 39.266033, -2.7600708, 3.0228262, 32.361313)
+material_override = SubResource("StandardMaterial3D_iixlx")
+amount = 35
+process_material = SubResource("ParticleProcessMaterial_qkqxl")
+draw_pass_1 = SubResource("QuadMesh_ku2vn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="torch_lit4/PartículasFogo" unique_id=1814187464]
+transform = Transform3D(6.8882966, 0, -5.9604645e-08, 0, 3.5779521, 0, 2.3841858e-07, 0, 42.566822, -2.5377808, 2.607687, 30.269608)
+light_color = Color(1.6153606, 0.9634218, 0, 1)
+light_energy = 1.362
+omni_range = 1.8724588
+
+[node name="torch_lit5" parent="." unique_id=1789954669 instance=ExtResource("24_ca651")]
+transform = Transform3D(0.9025177, -0.43065286, 0, 0.43065286, 0.9025177, 0, 0, 0, 1, 4.367921, 2.1389396, 21.932724)
+
+[node name="PartículasFogo" type="Node3D" parent="torch_lit5" unique_id=1980993123]
+transform = Transform3D(0.011554388, 0, -0.023417946, 0, 0.2794895, 0, 0.14471322, 0, 0.0018697673, 0.78889513, 0.01792869, 0.26980972)
+
+[node name="Fogo" type="GPUParticles3D" parent="torch_lit5/PartículasFogo" unique_id=1397755403]
+transform = Transform3D(0.039795026, 0, -0.49841383, 0, 0.5, 0, 0.49841383, 0, 0.039795026, -2.3556185, 1.8309706, 32.563133)
+material_override = SubResource("StandardMaterial3D_r8sov")
+amount = 50
+lifetime = 1.2
+process_material = SubResource("ParticleProcessMaterial_1ebi1")
+draw_pass_1 = SubResource("QuadMesh_8fqtv")
+
+[node name="Faísca" type="GPUParticles3D" parent="torch_lit5/PartículasFogo" unique_id=1219025811]
+transform = Transform3D(6.1963463, -0.0143853165, 0.03883189, 0.026247736, 3.3863773, 0.45408598, -0.006427765, -0.039146896, 39.266033, -2.7600708, 3.0228262, 32.361313)
+material_override = SubResource("StandardMaterial3D_iixlx")
+amount = 35
+process_material = SubResource("ParticleProcessMaterial_qkqxl")
+draw_pass_1 = SubResource("QuadMesh_ku2vn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="torch_lit5/PartículasFogo" unique_id=321230892]
+transform = Transform3D(6.8882966, 0, -5.9604645e-08, 0, 3.5779521, 0, 2.3841858e-07, 0, 42.566822, -2.5377808, 2.607687, 30.269608)
+light_color = Color(1.6153606, 0.9634218, 0, 1)
+light_energy = 1.362
+omni_range = 1.8724588
+
+[node name="torch_lit6" parent="." unique_id=622281371 instance=ExtResource("24_ca651")]
+transform = Transform3D(0.9025177, -0.43065286, 0, 0.43065286, 0.9025177, 0, 0, 0, 1, 4.367921, 2.1389396, 17.346863)
+
+[node name="PartículasFogo" type="Node3D" parent="torch_lit6" unique_id=1286263624]
+transform = Transform3D(0.011554388, 0, -0.023417946, 0, 0.2794895, 0, 0.14471322, 0, 0.0018697673, 0.78889513, 0.01792869, 0.26980972)
+
+[node name="Fogo" type="GPUParticles3D" parent="torch_lit6/PartículasFogo" unique_id=1526854941]
+transform = Transform3D(0.039795026, 0, -0.49841383, 0, 0.5, 0, 0.49841383, 0, 0.039795026, -2.3556185, 1.8309706, 32.563133)
+material_override = SubResource("StandardMaterial3D_r8sov")
+amount = 50
+lifetime = 1.2
+process_material = SubResource("ParticleProcessMaterial_1ebi1")
+draw_pass_1 = SubResource("QuadMesh_8fqtv")
+
+[node name="Faísca" type="GPUParticles3D" parent="torch_lit6/PartículasFogo" unique_id=704143330]
+transform = Transform3D(6.1963463, -0.0143853165, 0.03883189, 0.026247736, 3.3863773, 0.45408598, -0.006427765, -0.039146896, 39.266033, -2.7600708, 3.0228262, 32.361313)
+material_override = SubResource("StandardMaterial3D_iixlx")
+amount = 35
+process_material = SubResource("ParticleProcessMaterial_qkqxl")
+draw_pass_1 = SubResource("QuadMesh_ku2vn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="torch_lit6/PartículasFogo" unique_id=1550823623]
+transform = Transform3D(6.8882966, 0, -5.9604645e-08, 0, 3.5779521, 0, 2.3841858e-07, 0, 42.566822, -2.5377808, 2.607687, 30.269608)
+light_color = Color(1.6153606, 0.9634218, 0, 1)
+light_energy = 1.362
+omni_range = 1.8724588
+
+[node name="torch_lit7" parent="." unique_id=1754231377 instance=ExtResource("24_ca651")]
+transform = Transform3D(-0.9024215, 0.43060693, -0.014607899, 0.43065283, 0.9025176, 1.3139672e-08, 0.013183918, -0.0062909424, -0.9998933, -5.3206673, 2.1389396, 17.346863)
+
+[node name="PartículasFogo" type="Node3D" parent="torch_lit7" unique_id=1002154458]
+transform = Transform3D(0.011554388, 0, -0.023417946, 0, 0.2794895, 0, 0.14471322, 0, 0.0018697673, 0.78889513, 0.01792869, 0.26980972)
+
+[node name="Fogo" type="GPUParticles3D" parent="torch_lit7/PartículasFogo" unique_id=282932836]
+transform = Transform3D(0.039795026, 0, -0.49841383, 0, 0.5, 0, 0.49841383, 0, 0.039795026, -2.3556185, 1.8309706, 32.563133)
+material_override = SubResource("StandardMaterial3D_r8sov")
+amount = 50
+lifetime = 1.2
+process_material = SubResource("ParticleProcessMaterial_1ebi1")
+draw_pass_1 = SubResource("QuadMesh_8fqtv")
+
+[node name="Faísca" type="GPUParticles3D" parent="torch_lit7/PartículasFogo" unique_id=61606368]
+transform = Transform3D(6.1963463, -0.0143853165, 0.03883189, 0.026247736, 3.3863773, 0.45408598, -0.006427765, -0.039146896, 39.266033, -2.7600708, 3.0228262, 32.361313)
+material_override = SubResource("StandardMaterial3D_iixlx")
+amount = 35
+process_material = SubResource("ParticleProcessMaterial_qkqxl")
+draw_pass_1 = SubResource("QuadMesh_ku2vn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="torch_lit7/PartículasFogo" unique_id=1893598182]
+transform = Transform3D(6.8882966, 0, -5.9604645e-08, 0, 3.5779521, 0, 2.3841858e-07, 0, 42.566822, -2.5377808, 2.607687, 30.269608)
+light_color = Color(1.6153606, 0.9634218, 0, 1)
+light_energy = 1.362
+omni_range = 1.8724588
+
 [connection signal="body_entered" from="ZonaDeDano" to="CameraPivot" method="_on_zona_de_dano_body_entered"]
 [connection signal="body_entered" from="ZonaDeDano" to="ZonaDeDano" method="_on_body_entered"]
+[connection signal="body_entered" from="PPnoel/HitboxDano" to="PPnoel" method="_on_hitbox_dano_body_entered"]
 
 [editable path="ZonaDeDano/CollisionShape3D/PlatHoriz13"]
 [editable path="barrel_small_stack2"]
