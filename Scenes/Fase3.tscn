@@ -28,7 +28,8 @@
 [ext_resource type="Texture2D" uid="uid://cv30hsxwchiic" path="res://Textures/T_VFX_Glow_1.PNG" id="26_ph62k"]
 
 [sub_resource type="Environment" id="Environment_kgp2t"]
-background_mode = 2
+background_mode = 1
+background_energy_multiplier = 16.0
 sky = ExtResource("3_pfneb")
 sky_custom_fov = 77.9
 sky_rotation = Vector3(-3.1415927, 0, 0)
@@ -551,7 +552,7 @@ draw_pass_1 = SubResource("QuadMesh_ku2vn")
 transform = Transform3D(6.8882966, 0, -5.9604645e-08, 0, 3.5779521, 0, 2.3841858e-07, 0, 42.566822, -2.5377808, 2.607687, 30.269608)
 light_color = Color(1.6153606, 0.9634218, 0, 1)
 light_energy = 1.362
-omni_range = 1.8724588
+omni_range = 2.548
 
 [node name="torch_lit3" parent="." unique_id=2102213529 instance=ExtResource("24_ca651")]
 transform = Transform3D(0.9025177, -0.43065286, 0, 0.43065286, 0.9025177, 0, 0, 0, 1, 4.367921, 2.1389396, 30.944843)
@@ -578,7 +579,7 @@ draw_pass_1 = SubResource("QuadMesh_ku2vn")
 transform = Transform3D(6.8882966, 0, -5.9604645e-08, 0, 3.5779521, 0, 2.3841858e-07, 0, 42.566822, -2.5377808, 2.607687, 30.269608)
 light_color = Color(1.6153606, 0.9634218, 0, 1)
 light_energy = 1.362
-omni_range = 1.8724588
+omni_range = 2.502
 
 [node name="torch_lit4" parent="." unique_id=1693849627 instance=ExtResource("24_ca651")]
 transform = Transform3D(0.9025177, -0.43065286, 0, 0.43065286, 0.9025177, 0, 0, 0, 1, 4.367921, 2.1389396, 26.407381)
@@ -605,7 +606,7 @@ draw_pass_1 = SubResource("QuadMesh_ku2vn")
 transform = Transform3D(6.8882966, 0, -5.9604645e-08, 0, 3.5779521, 0, 2.3841858e-07, 0, 42.566822, -2.5377808, 2.607687, 30.269608)
 light_color = Color(1.6153606, 0.9634218, 0, 1)
 light_energy = 1.362
-omni_range = 1.8724588
+omni_range = 2.548
 
 [node name="torch_lit5" parent="." unique_id=1789954669 instance=ExtResource("24_ca651")]
 transform = Transform3D(0.9025177, -0.43065286, 0, 0.43065286, 0.9025177, 0, 0, 0, 1, 4.367921, 2.1389396, 21.932724)
@@ -632,7 +633,7 @@ draw_pass_1 = SubResource("QuadMesh_ku2vn")
 transform = Transform3D(6.8882966, 0, -5.9604645e-08, 0, 3.5779521, 0, 2.3841858e-07, 0, 42.566822, -2.5377808, 2.607687, 30.269608)
 light_color = Color(1.6153606, 0.9634218, 0, 1)
 light_energy = 1.362
-omni_range = 1.8724588
+omni_range = 2.548
 
 [node name="torch_lit6" parent="." unique_id=622281371 instance=ExtResource("24_ca651")]
 transform = Transform3D(0.9025177, -0.43065286, 0, 0.43065286, 0.9025177, 0, 0, 0, 1, 4.367921, 2.1389396, 17.346863)
@@ -659,34 +660,7 @@ draw_pass_1 = SubResource("QuadMesh_ku2vn")
 transform = Transform3D(6.8882966, 0, -5.9604645e-08, 0, 3.5779521, 0, 2.3841858e-07, 0, 42.566822, -2.5377808, 2.607687, 30.269608)
 light_color = Color(1.6153606, 0.9634218, 0, 1)
 light_energy = 1.362
-omni_range = 1.8724588
-
-[node name="torch_lit7" parent="." unique_id=1754231377 instance=ExtResource("24_ca651")]
-transform = Transform3D(-0.9024215, 0.43060693, -0.014607899, 0.43065283, 0.9025176, 1.3139672e-08, 0.013183918, -0.0062909424, -0.9998933, -5.3206673, 2.1389396, 17.346863)
-
-[node name="PartículasFogo" type="Node3D" parent="torch_lit7" unique_id=1002154458]
-transform = Transform3D(0.011554388, 0, -0.023417946, 0, 0.2794895, 0, 0.14471322, 0, 0.0018697673, 0.78889513, 0.01792869, 0.26980972)
-
-[node name="Fogo" type="GPUParticles3D" parent="torch_lit7/PartículasFogo" unique_id=282932836]
-transform = Transform3D(0.039795026, 0, -0.49841383, 0, 0.5, 0, 0.49841383, 0, 0.039795026, -2.3556185, 1.8309706, 32.563133)
-material_override = SubResource("StandardMaterial3D_r8sov")
-amount = 50
-lifetime = 1.2
-process_material = SubResource("ParticleProcessMaterial_1ebi1")
-draw_pass_1 = SubResource("QuadMesh_8fqtv")
-
-[node name="Faísca" type="GPUParticles3D" parent="torch_lit7/PartículasFogo" unique_id=61606368]
-transform = Transform3D(6.1963463, -0.0143853165, 0.03883189, 0.026247736, 3.3863773, 0.45408598, -0.006427765, -0.039146896, 39.266033, -2.7600708, 3.0228262, 32.361313)
-material_override = SubResource("StandardMaterial3D_iixlx")
-amount = 35
-process_material = SubResource("ParticleProcessMaterial_qkqxl")
-draw_pass_1 = SubResource("QuadMesh_ku2vn")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="torch_lit7/PartículasFogo" unique_id=1893598182]
-transform = Transform3D(6.8882966, 0, -5.9604645e-08, 0, 3.5779521, 0, 2.3841858e-07, 0, 42.566822, -2.5377808, 2.607687, 30.269608)
-light_color = Color(1.6153606, 0.9634218, 0, 1)
-light_energy = 1.362
-omni_range = 1.8724588
+omni_range = 2.548
 
 [connection signal="body_entered" from="ZonaDeDano" to="CameraPivot" method="_on_zona_de_dano_body_entered"]
 [connection signal="body_entered" from="ZonaDeDano" to="ZonaDeDano" method="_on_body_entered"]
@@ -695,3 +669,4 @@ omni_range = 1.8724588
 [editable path="ZonaDeDano/CollisionShape3D/PlatHoriz13"]
 [editable path="barrel_small_stack2"]
 [editable path="PlatHoriz13"]
+[editable path="torch_lit4"]
