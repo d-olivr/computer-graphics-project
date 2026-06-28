@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d0wxaqib7ojkn"]
+
+[ext_resource type="Script" uid="uid://bjspy4wpa128x" path="res://camera_transition.gd" id="1_0fj0l"]
+
+[node name="CameraTransition" type="Camera3D" unique_id=1037101633]
+script = ExtResource("1_0fj0l")
