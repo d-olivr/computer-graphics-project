@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dy7vuou2ebypg" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrel_large.gltf" id="18_n3i02"]
 [ext_resource type="PackedScene" uid="uid://r54ydq2p17lv" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrel_small_stack.gltf" id="19_kyheh"]
 [ext_resource type="ArrayMesh" uid="uid://cn03wvlqik23u" path="res://Assets/Models/OBJ format/door-rotate.obj" id="21_12kf1"]
-[ext_resource type="Script" uid="uid://01xgf6lkj5f1" path="res://Actors/Player/inimigo.gd" id="22_xa8ef"]
+[ext_resource type="Script" uid="uid://do2o6id7arsrb" path="res://Scenes/p_pnoel.gd" id="22_xa8ef"]
 [ext_resource type="PackedScene" uid="uid://chmp7ml5j4a4o" path="res://Actors/Noel.tscn" id="23_mak8r"]
 [ext_resource type="PackedScene" uid="uid://c3y80cwao3408" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/torch_lit.gltf" id="24_ca651"]
 [ext_resource type="Texture2D" uid="uid://i3j3crmsaxh5" path="res://Textures/T_fire01.png" id="25_a5d2j"]
