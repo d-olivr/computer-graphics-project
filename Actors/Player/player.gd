@@ -4,9 +4,15 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 5.5
 
 @onready var health_component: HealthComponent = $HealthComponent
-@onready var visual_node: Node3D = $VisualVampira
+@onready var visual_node: Node3D = $VampiraNV
 @onready var area_ataque: Area3D = $AreaAtaque
 @onready var hud: CanvasLayer = $HUD
+
+# --- VARIÁVEIS DE ILUMINAÇÃO ---
+@export var luz_lanterna: Node3D
+@export var velocidade_luz: float = 5.0 # Controla a rapidez com que a luz segue a Vânia
+
+@onready var anim_player: AnimationPlayer = $VampiraNV/AnimationPlayer
 
 var spawn_position: Vector3
 
@@ -27,6 +33,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
 
 	# Pulo
 	if Input.is_action_just_pressed("ui_select") and is_on_floor():
@@ -70,11 +77,27 @@ func _physics_process(delta: float) -> void:
 			SPEED
 		)
 
-	velocity.x = 0
+	#velocity.x = 0
+	
+	# --- NOVO: CONTROLE DE ANIMAÇÕES ---
+	# 1. Verificamos se a animação de ataque está tocando
+	var is_attacking = anim_player.current_animation == "animacoes/chutar" and anim_player.is_playing()
+	
+	# 2. Só mudamos a animação de movimento se ELA NÃO ESTIVER ATACANDO
+	if not is_attacking:
+		if not is_on_floor():
+			anim_player.play("animacoes/pular") # Troque pelo nome exato da sua animação de pulo
+		elif direction != Vector3.ZERO:
+			anim_player.play("animacoes/correr") # Troque pelo nome exato da sua animação de corrida
+		else:
+			anim_player.play("animacoes/idle") # Troque pelo nome exato da sua animação de ficar parada
+	# -----------------------------------
 
 	move_and_slide()
 
 func atacar() -> void:
+	# NOVO: Toca a animação de ataque assim que a função é chamada
+	anim_player.play("animacoes/chutar") # Troque pelo nome exato da sua animação de ataque
 	var corpos_acertados = area_ataque.get_overlapping_bodies()
 
 	for corpo in corpos_acertados:
@@ -87,6 +110,17 @@ func heal(amount: int) -> void:
 
 func take_damage(amount: int) -> void:
 	health_component.take_damage(amount)
+
+func _process(delta: float) -> void:
+	# Verifica se atribuímos uma luz no Inspetor
+	if luz_lanterna:
+		# Define a posição onde a luz deve tentar chegar (ex: 1.5 metros acima do chão)
+		var posicao_alvo = global_position + Vector3(0, 1.5, 0)
+		
+		# O segredo da suavização (lerp): desliza a posição atual até ao alvo
+		luz_lanterna.global_position = luz_lanterna.global_position.lerp(posicao_alvo, velocidade_luz * delta)
+
+
 
 func _on_player_died() -> void:
 	print("Vânia morreu!")

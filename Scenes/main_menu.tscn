@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://hmaipry3hm62"]
+
+[ext_resource type="Script" uid="uid://biqte8ndagkth" path="res://Scenes/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://cej8l1w8ete4k" path="res://4VG1kXS - Imgur.png" id="2_48xlc"]
+
+[node name="MainMenu" type="Control" unique_id=809624705]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=892979225]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_48xlc")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="StartButton" type="Button" parent="." unique_id=195027600]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 546.0
+offset_right = 661.0
+offset_bottom = 607.0
+flat = true
+
+[node name="StoryButton" type="Button" parent="." unique_id=1598127963]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 550.0
+offset_right = 461.0
+offset_bottom = 604.0
+flat = true
+
+[node name="CreditsButton" type="Button" parent="." unique_id=596248020]
+layout_mode = 0
+offset_left = 683.0
+offset_top = 551.0
+offset_right = 839.0
+offset_bottom = 605.0
+flat = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StoryButton" to="." method="_on_story_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
