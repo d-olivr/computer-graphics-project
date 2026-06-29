@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var damage_amount: int = 5
+@export var damage_amount: int = 8
 @export var speed: float = 2.0
 @export var chase_speed: float = 3.5
 @export var detection_distance: float = 2.5

@@ -8,7 +8,8 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ago6s"]
 
 [sub_resource type="Animation" id="Animation_b8o54"]
-length = 0.001
+length = 6.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -16,10 +17,22 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.30892587, 8.7459135, 37.29782)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0.23627031, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_gm1rn"]
@@ -55,8 +68,7 @@ mesh = SubResource("CapsuleMesh_lchr1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=869625300]
 shape = SubResource("CapsuleShape3D_ago6s")
 
-[node name="Key" type="MeshInstance3D" parent="." unique_id=1223008784]
-transform = Transform3D(0.53212285, 0, 0.8466672, 0, 1, 0, -0.8466672, 0, 0.53212285, 0.30892587, 8.7459135, 37.29782)
+[node name="Key" type="MeshInstance3D" parent="." unique_id=683542920]
 mesh = ExtResource("2_ago6s")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Key" unique_id=136946887]
@@ -64,7 +76,7 @@ libraries/ = SubResource("AnimationLibrary_laavl")
 autoplay = &"new_animation"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Key" unique_id=67850745]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07988644, 0)
+transform = Transform3D(0.53212285, 0, 0.8466672, 0, 1, 0, -0.8466672, 0, 0.53212285, -0.0027953088, 0.045015097, 0.08481927)
 light_color = Color(1, 0.7529412, 0.20392157, 1)
 light_energy = 0.304
 light_volumetric_fog_energy = 0.768
