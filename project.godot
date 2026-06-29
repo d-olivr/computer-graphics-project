@@ -14,6 +14,10 @@ config/name="CasteloDaVania"
 run/main_scene="uid://xfmdc513em23"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+Global="*uid://dmlc7cvnwe6a6"
+
 [filesystem]
 
 import/blender/enabled=false

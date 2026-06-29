@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://g5mrhq8nf45q"]
+
+[ext_resource type="Script" uid="uid://dv0fxpwrhlt5x" path="res://porta.gd" id="1_5rp3s"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_umd14"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5rp3s"]
+
+[node name="Porta" type="Area3D" unique_id=980008422]
+script = ExtResource("1_5rp3s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=389787004]
+mesh = SubResource("CapsuleMesh_umd14")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1084388618]
+shape = SubResource("BoxShape3D_5rp3s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
