@@ -305,7 +305,7 @@ transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, -0.003161788, 
 transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, 2.265998, 1.8461623, 39.206146)
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1830026366 node_paths=PackedStringArray("target")]
-transform = Transform3D(0.0037052655, -0.00030078998, -0.99999267, 0.0014142469, 0.99999875, -0.0002955515, 0.99999195, -0.0014131421, 0.003705686, 0, 0.3288467, -3.6664362)
+transform = Transform3D(0.0037052655, -0.00030078998, -0.9999926, 0.0014142469, 0.99999875, -0.00029555146, 0.99999195, -0.0014131421, 0.0037056857, 0, 0.3288467, -3.6664362)
 script = ExtResource("2_arl7j")
 target = NodePath("../Player")
 zoom_maximum = 8.0
@@ -472,7 +472,7 @@ transform = Transform3D(0.6062789, 0, 0, 0, 0.6478406, 0, 0, 0, 0.7121932, 3.718
 [node name="barrel_small_stack2" parent="." unique_id=547414112 instance=ExtResource("19_kyheh")]
 transform = Transform3D(-0.008206212, 0, -1.1382179, 0, 0.78738993, 0, 0.6944777, 0, -0.013449617, 0.14697695, 0.17988086, -15.6226845)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="barrel_small_stack2/barrel_small_stack" parent_id_path=PackedInt32Array(547414112, 1816149021) index="0" unique_id=950003666]
+[node name="StaticBody3D" type="StaticBody3D" parent="barrel_small_stack2/barrel_small_stack" parent_id_path=PackedInt32Array(547414112, 215879970) index="0" unique_id=950003666]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="barrel_small_stack2/barrel_small_stack/StaticBody3D" unique_id=1844201282]
 shape = SubResource("ConcavePolygonShape3D_pfneb")

@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://so1nfl6nwipt" path="res://Actors/Player/item_cura.tscn" id="15_krupj"]
 [ext_resource type="PackedScene" uid="uid://c3y80cwao3408" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/torch_lit.gltf" id="16_w7pbe"]
 [ext_resource type="PackedScene" uid="uid://bnhd4oi1ynxkb" path="res://Scenes/Espinhos.tscn" id="17_iu0ld"]
+[ext_resource type="PackedScene" uid="uid://brvv3rybfyvlx" path="res://Scenes/checkpoint_manager.tscn" id="18_lk1rw"]
 
 [sub_resource type="Environment" id="Environment_kgp2t"]
 background_mode = 2
@@ -223,7 +224,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_2fkrj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ObjChao" unique_id=745217029]
 shape = SubResource("BoxShape3D_3khbi")
 
-[node name="Player" type="CharacterBody3D" parent="." unique_id=1345092759 groups=["player"]]
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1345092759 groups=["Player", "player"]]
 transform = Transform3D(0.0072430493, 0, -0.9999738, 0, 1, 0, 0.9999738, 0, 0.0072430493, 0.9196408, 3.2506118, -18.436987)
 collision_layer = 3
 collision_mask = 3
@@ -362,8 +363,30 @@ distance_fade_begin = 0.0
 distance_fade_shadow = 1934.23
 distance_fade_length = 6.93
 
+[node name="tocha checkpoint 1" parent="." unique_id=1920874126 instance=ExtResource("16_w7pbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.091444, 0.3950459, 18.798935)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="tocha checkpoint 1" unique_id=409788897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5138377, 0)
+distance_fade_enabled = true
+distance_fade_begin = 0.0
+distance_fade_shadow = 1934.23
+distance_fade_length = 6.93
+
+[node name="tocha checkpoint 2" parent="." unique_id=83956160 instance=ExtResource("16_w7pbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17169, 0.3950459, 18.859278)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="tocha checkpoint 2" unique_id=570740754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5138377, 0)
+distance_fade_enabled = true
+distance_fade_begin = 0.0
+distance_fade_shadow = 1934.23
+distance_fade_length = 6.93
+
 [node name="Espinhos" parent="." unique_id=966587351 instance=ExtResource("17_iu0ld")]
 transform = Transform3D(0.36345696, 0, -0.019185875, 0, 1.7338313, 0, 0.25055435, 0, 0.027831247, 0, 0, -7.4800935)
+
+[node name="CheckpointManager" parent="." unique_id=392840467 instance=ExtResource("18_lk1rw")]
 
 [connection signal="body_entered" from="ZonaDeDano" to="CameraPivot" method="_on_zona_de_dano_body_entered"]
 [connection signal="body_entered" from="ZonaDeDano" to="ZonaDeDano" method="_on_body_entered"]
