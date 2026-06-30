@@ -14,6 +14,7 @@ var is_bouncing := false
 
 @onready var health_component: HealthComponent = $HealthComponent2
 @onready var player = get_tree().get_first_node_in_group("player")
+@onready var anim_player: AnimationPlayer = $idleWS2/AnimationPlayer
 
 func _ready() -> void:
 	axis_lock_linear_x = true
@@ -56,10 +57,25 @@ func _physics_process(delta: float) -> void:
 
 	velocity.x = 0
 
+	var is_attacking = anim_player.current_animation == "Esqueletão/ATQ" and anim_player.is_playing()
+	
+	if not is_attacking:
+		if not is_on_floor():
+			anim_player.play("Esqueletão/Jump")
+		elif abs(velocity.z) > 0.1:
+			anim_player.play("Esqueletão/Andar")
+		else:
+			anim_player.play("idle")
+
+
+
 	move_and_slide()
 
 func _on_hitbox_dano_body_entered(body: Node3D) -> void:
 	if body == player and not is_bouncing:
+		if anim_player.current_animation != "Esqueletão/ATQ":
+			anim_player.play("Esqueletão/ATQ")
+
 		player.take_damage(damage_amount)
 
 		is_bouncing = true

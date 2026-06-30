@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CasteloDaVania"
-run/main_scene="uid://xfmdc513em23"
+run/main_scene="uid://hmaipry3hm62"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
