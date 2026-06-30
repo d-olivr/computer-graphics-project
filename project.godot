@@ -17,10 +17,16 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 [autoload]
 
 Global="*uid://dmlc7cvnwe6a6"
+CheckpointManager="*uid://brvv3rybfyvlx"
 
 [filesystem]
 
 import/blender/enabled=false
+
+[global_group]
+
+Singleton=""
+Player=""
 
 [input]
 

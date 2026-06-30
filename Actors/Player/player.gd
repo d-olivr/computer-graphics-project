@@ -8,6 +8,9 @@ const JUMP_VELOCITY = 5.5
 @onready var area_ataque: Area3D = $AreaAtaque
 @onready var hud: CanvasLayer = $HUD
 
+# ----------- CHECKPOINT ---------
+@onready var checkpoint_manager = get_tree().get_first_node_in_group("Singleton")
+
 # --- VARIÁVEIS DE ILUMINAÇÃO ---
 @export var luz_lanterna: Node3D
 @export var velocidade_luz: float = 5.0 # Controla a rapidez com que a luz segue a Vânia
@@ -126,7 +129,8 @@ func _on_player_died() -> void:
 	print("Vânia morreu!")
 
 	# Respawn
-	global_position = spawn_position
+	var player = self
+	player.global_position = checkpoint_manager.last_location
 	velocity = Vector3.ZERO
 
 	# Recupera a vida

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://brvv3rybfyvlx"]
+
+[ext_resource type="Script" uid="uid://bvexgwcxf25l" path="res://Scripts/checkpoint_manager.gd" id="1_gmky3"]
+[ext_resource type="PackedScene" uid="uid://c3o125xofd4jl" path="res://Scenes/checkpoint.tscn" id="2_pvqmq"]
+
+[node name="CheckpointManager" type="Node" unique_id=392840467 groups=["Singleton"]]
+script = ExtResource("1_gmky3")
+
+[node name="Checkpoint" parent="." unique_id=2036524687 instance=ExtResource("2_pvqmq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71383595, 27.54632)
