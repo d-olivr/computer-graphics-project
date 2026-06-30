@@ -15,11 +15,13 @@ var is_bouncing := false
 @onready var health_component: HealthComponent = $HealthComponent2
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var anim_player: AnimationPlayer = $idleWS2/AnimationPlayer
+@onready var victory_screen = $"../VictoryScene"
 
 func _ready() -> void:
 	axis_lock_linear_x = true
 	health_component.died.connect(_on_health_component_died)
 	start_position = global_position
+	print("Victory achada: ", victory_screen)
 
 func _physics_process(delta: float) -> void:
 	if is_bouncing:
@@ -83,4 +85,11 @@ func take_damage(amount: int) -> void:
 	health_component.take_damage(amount)
 
 func _on_health_component_died() -> void:
-	queue_free()
+	set_physics_process(false)
+	hide()
+
+	await get_tree().create_timer(2.0).timeout
+
+	victory_screen.visible = true
+	
+	

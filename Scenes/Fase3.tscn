@@ -24,7 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://chmp7ml5j4a4o" path="res://Actors/Noel.tscn" id="23_mak8r"]
 [ext_resource type="PackedScene" uid="uid://c3y80cwao3408" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/torch_lit.gltf" id="24_ca651"]
 [ext_resource type="Texture2D" uid="uid://i3j3crmsaxh5" path="res://Textures/T_fire01.png" id="25_a5d2j"]
+[ext_resource type="PackedScene" uid="uid://hufcw1ai5ood" path="res://Scenes/VictoryScene.tscn" id="26_mak8r"]
 [ext_resource type="Texture2D" uid="uid://cv30hsxwchiic" path="res://Textures/T_VFX_Glow_1.PNG" id="26_ph62k"]
+[ext_resource type="Script" uid="uid://8jclttgmxqur" path="res://Scenes/victory_scene.gd" id="27_ca651"]
 
 [sub_resource type="Environment" id="Environment_kgp2t"]
 background_mode = 1
@@ -303,7 +305,7 @@ transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, -0.003161788, 
 transform = Transform3D(10.641225, 0, 0, 0, 6.552405, 0, 0, 0, 1, 2.265998, 1.8461623, 39.206146)
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1830026366 node_paths=PackedStringArray("target")]
-transform = Transform3D(0.0037052655, -0.00030078998, -0.9999927, 0.0014142469, 0.99999875, -0.0002955515, 0.99999195, -0.0014131421, 0.0037056862, 0, 0.3288467, -3.6664362)
+transform = Transform3D(0.0037052655, -0.00030078998, -0.99999267, 0.0014142469, 0.99999875, -0.0002955515, 0.99999195, -0.0014131421, 0.003705686, 0, 0.3288467, -3.6664362)
 script = ExtResource("2_arl7j")
 target = NodePath("../Player")
 zoom_maximum = 8.0
@@ -678,6 +680,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.740815, 0, 33.20598)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=117214525]
 libraries/ = SubResource("AnimationLibrary_ca651")
 autoplay = &"IntroBoss"
+
+[node name="VictoryScene" parent="." unique_id=78396367 groups=["victoryScene"] instance=ExtResource("26_mak8r")]
+script = ExtResource("27_ca651")
 
 [connection signal="body_entered" from="ZonaDeDano" to="CameraPivot" method="_on_zona_de_dano_body_entered"]
 [connection signal="body_entered" from="ZonaDeDano" to="ZonaDeDano" method="_on_body_entered"]
