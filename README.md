@@ -3,7 +3,7 @@
 # 🏰 Castelo da Vânia
 ### No coração da Transilvânia, onde o gótico encontra o tecnológico.
 
-![Godot Engine](https://img.shields.io/badge/Godot-4.x-478CBF?style=flat-square&logo=godot-engine&logoColor=white)
+![Godot Engine](https://img.shields.io/badge/Godot-4.6.3-478CBF?style=flat-square&logo=godot-engine&logoColor=white)
 ![GDScript](https://img.shields.io/badge/GDScript-478CBF?style=flat-square&logo=godot-engine&logoColor=white)
 
 [README in English](README_EN.md)
