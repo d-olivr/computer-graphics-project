@@ -1,10 +1,12 @@
 <div align="center">
 
+<img width="2163" alt="divider 1" src="https://github.com/user-attachments/assets/432a6221-67cc-46d0-8e5d-cd7f35e654bf" />
+
 # 🏰 Castelo da Vânia
 ### No coração da Transilvânia, onde o gótico encontra o tecnológico.
 
-![Godot Engine](https://img.shields.io/badge/Godot-4.6.3-478CBF?style=flat-square&logo=godot-engine&logoColor=white)
-![GDScript](https://img.shields.io/badge/GDScript-478CBF?style=flat-square&logo=godot-engine&logoColor=white)
+![Godot Engine](https://img.shields.io/badge/Godot-4.6.3-d31515?style=for-the-badge&logo=godot-engine&logoColor=white)
+![GDScript](https://img.shields.io/badge/GDScript-d31515?style=for-the-badge&logo=godot-engine&logoColor=white)
 
 [README in English](README_EN.md)
 
@@ -30,6 +32,12 @@ Vânia adentra o castelo, agora **dominado pela escuridão**. Com a visão reduz
 
 ### 💻 Fase 3: As Profundezas
 Com o auxílio das luzes agora acesas, Vânia avança pelas **profundezas do castelo** em busca da chave que destrava a passagem até o invasor — onde se inicia o confronto final.
+
+---
+## Preview
+<img width="1920" height="1080" alt="menu-inicial" src="https://github.com/user-attachments/assets/7d55fa13-8170-4339-9ed0-c4151b3d0380" />
+> Primeira tela do jogo.
+
 
 ---
 
@@ -87,3 +95,5 @@ Com o auxílio das luzes agora acesas, Vânia avança pelas **profundezas do cas
 ---
 
 <p align="center">🧛 <em>Feito com sangue, suor e shaders.</em> 🖥️</p>
+
+<img width="2163" alt="divider 2" src="https://github.com/user-attachments/assets/432a6221-67cc-46d0-8e5d-cd7f35e654bf" />
