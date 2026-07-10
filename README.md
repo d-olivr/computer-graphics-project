@@ -66,12 +66,12 @@ Com o auxílio das luzes agora acesas, Vânia avança pelas **profundezas do cas
 - [x] 🏰 Planejar fases e progressão
 - [x] ⚙️ Escolher engine/framework
 - [x] 📹 Implementar zoom dinâmico
-- [ ] 🌫️ Implementar névoa volumétrica (Fase 1)
-- [ ] 🕯️ Implementar mecânica de escuridão/visão reduzida (Fase 2)
-- [ ] ✨ Implementar sistema de partículas (Fase 2)
-- [ ] 🩸 Implementar efeito de dano em todas as fases
-- [ ] 🔭 Implementar funções de câmera (Fase 3)
-- [ ] 📝 Finalizar documentação técnica
+- [x] 🌫️ Implementar névoa volumétrica (Fase 1)
+- [x] 🕯️ Implementar mecânica de escuridão/visão reduzida (Fase 2)
+- [x] ✨ Implementar sistema de partículas (Fase 2)
+- [x] 🩸 Implementar efeito de dano em todas as fases
+- [x] 🔭 Implementar funções de câmera (Fase 3)
+- [x] 📝 Finalizar documentação técnica (LaTeX)
 
 ---
 
